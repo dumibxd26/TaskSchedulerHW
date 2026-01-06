@@ -1,3 +1,5 @@
 venv/
+results/
+__pycache__/
 
 # do not ignore data dir....
