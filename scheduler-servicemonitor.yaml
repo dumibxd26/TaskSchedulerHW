@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: scheduler
+  namespace: monitoring
+  labels:
+    release: kps   # IMPORTANT: must match your Helm release name
+spec:
+  namespaceSelector:
+    matchNames:
+    - default       # put the namespace where scheduler-svc lives (default if you deployed there)
+  selector:
+    matchLabels:
+      app: scheduler
+  endpoints:
+  - port: http
+    path: /metrics
+    interval: 15s

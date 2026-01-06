@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scheduler
+  template:
+    metadata:
+      labels:
+        app: scheduler
+    spec:
+      containers:
+      - name: scheduler
+        image: rr-sim:latest
+        imagePullPolicy: IfNotPresent
+        command: ["python","-m","uvicorn","scheduler:app","--host","0.0.0.0","--port","8000"]
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DATA_DIR
+          value: /data
+        - name: RESULTS_DIR
+          value: /results
+        - name: WORKER_TIMEOUT_SEC
+          value: "10"
+        volumeMounts:
+        - name: datasets
+          mountPath: /data
+          readOnly: true
+        - name: results
+          mountPath: /results
+      volumes:
+      - name: datasets
+        configMap:
+          name: sim-datasets
+      - name: results
+        emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scheduler-svc
+spec:
+  selector:
+    app: scheduler
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+

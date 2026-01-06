@@ -1,0 +1,6 @@
+service:
+  type: ClusterIP
+
+persistence:
+  enabled: true
+  size: 10Gi
