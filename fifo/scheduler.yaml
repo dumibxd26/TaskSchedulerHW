@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scheduler-fifo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scheduler-fifo
+  template:
+    metadata:
+      labels:
+        app: scheduler-fifo
+    spec:
+      containers:
+      - name: scheduler
+        image: fifo-sim:latest
+        imagePullPolicy: IfNotPresent
+        command: ["python","-m","uvicorn","scheduler:app","--host","0.0.0.0","--port","8000"]
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DATA_DIR
+          value: /data
+        - name: RESULTS_DIR
+          value: /results
+        - name: WORKER_TIMEOUT_SEC
+          value: "10"
+        volumeMounts:
+        - name: datasets
+          mountPath: /data
+          readOnly: true
+        - name: results
+          mountPath: /results
+      volumes:
+      - name: datasets
+        configMap:
+          name: sim-datasets-fifo
+      - name: results
+        emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scheduler-svc-fifo
+spec:
+  selector:
+    app: scheduler-fifo
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
