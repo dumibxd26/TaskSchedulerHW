@@ -1,4 +1,6 @@
 venv/
 results/
+!priority/results/
+priority/results/.tmp/
 __pycache__/
 data/

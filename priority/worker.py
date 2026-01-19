@@ -216,10 +216,14 @@ async def core_driver(client: httpx.AsyncClient, core_id: int):
         if status == "ok":
             assign_to_core(core_id, msg)
             event = await asyncio.to_thread(done_qs[core_id].get)
-            try:
-                await client.post(f"{SCHEDULER_URL}/done", json=event)
-            except Exception:
-                await asyncio.sleep(0.2)
+            while True:
+                try:
+                    resp = await client.post(f"{SCHEDULER_URL}/done", json=event)
+                    resp.raise_for_status()
+                    break
+                except Exception:
+                    # keep retrying so completed jobs are not lost if /done fails temporarily
+                    await asyncio.sleep(0.5)
             continue
 
         if status in {"wait", "no_run", "done"}:
