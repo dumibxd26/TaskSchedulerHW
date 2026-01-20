@@ -4,3 +4,7 @@ results/
 priority/results/.tmp/
 __pycache__/
 data/
+round-robin/data/
+round-robin/old_runs/
+round-robin/results/
+round-robin/results2
