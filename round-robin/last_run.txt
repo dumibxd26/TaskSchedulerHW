@@ -1,0 +1,85 @@
+Started run_id=02fd9941de quantum_ms=2
+{
+  "run_id": "02fd9941de",
+  "dataset_file": "dataset_rr_arrivals_10k.csv",
+  "quantum_ms": 2,
+  "speedup": 20000.0,
+  "jobs": 10000,
+  "mean_response_ms": 3605952750.0869,
+  "p50_response_ms": 3236608475.0,
+  "p95_response_ms": 8284773589.649995,
+  "p99_response_ms": 8614479077.68,
+  "mean_wait_ms": 3605952693.5022,
+  "avg_slices_per_job": 28.5392,
+  "total_slots_at_end": 4
+}
+jobs_csv: /results/results_jobs_02fd9941de.csv
+run_csv : /results/results_run_02fd9941de.csv
+Started run_id=7f37cc8ccb quantum_ms=5
+{
+  "run_id": "7f37cc8ccb",
+  "dataset_file": "dataset_rr_arrivals_10k.csv",
+  "quantum_ms": 5,
+  "speedup": 20000.0,
+  "jobs": 10000,
+  "mean_response_ms": 1379372612.0869,
+  "p50_response_ms": 1242337762.0,
+  "p95_response_ms": 3156560759.4999986,
+  "p99_response_ms": 3288172381.2,
+  "mean_wait_ms": 1379372555.5022,
+  "avg_slices_per_job": 11.6975,
+  "total_slots_at_end": 4
+}
+jobs_csv: /results/results_jobs_7f37cc8ccb.csv
+run_csv : /results/results_run_7f37cc8ccb.csv
+Started run_id=556d1a03fd quantum_ms=10
+{
+  "run_id": "556d1a03fd",
+  "dataset_file": "dataset_rr_arrivals_10k.csv",
+  "quantum_ms": 10,
+  "speedup": 20000.0,
+  "jobs": 10000,
+  "mean_response_ms": 777557536.0869,
+  "p50_response_ms": 734336308.0,
+  "p95_response_ms": 1875159973.55,
+  "p99_response_ms": 1929730854.8,
+  "mean_wait_ms": 777557479.5022,
+  "avg_slices_per_job": 6.0443,
+  "total_slots_at_end": 4
+}
+jobs_csv: /results/results_jobs_556d1a03fd.csv
+run_csv : /results/results_run_556d1a03fd.csv
+Started run_id=c38632ddc3 quantum_ms=20
+{
+  "run_id": "c38632ddc3",
+  "dataset_file": "dataset_rr_arrivals_10k.csv",
+  "quantum_ms": 20,
+  "speedup": 20000.0,
+  "jobs": 10000,
+  "mean_response_ms": 356376076.0869,
+  "p50_response_ms": 303985821.5,
+  "p95_response_ms": 924367762.4999998,
+  "p99_response_ms": 973044891.67,
+  "mean_wait_ms": 356376019.5022,
+  "avg_slices_per_job": 3.216,
+  "total_slots_at_end": 4
+}
+jobs_csv: /results/results_jobs_c38632ddc3.csv
+run_csv : /results/results_run_c38632ddc3.csv
+Started run_id=5da7b22903 quantum_ms=50
+{
+  "run_id": "5da7b22903",
+  "dataset_file": "dataset_rr_arrivals_10k.csv",
+  "quantum_ms": 50,
+  "speedup": 20000.0,
+  "jobs": 10000,
+  "mean_response_ms": 310977992.0869,
+  "p50_response_ms": 286915838.0,
+  "p95_response_ms": 661820600.15,
+  "p99_response_ms": 689322769.2,
+  "mean_wait_ms": 310977935.5022,
+  "avg_slices_per_job": 1.8421,
+  "total_slots_at_end": 4
+}
+jobs_csv: /results/results_jobs_5da7b22903.csv
+run_csv : /r

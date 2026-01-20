@@ -7,18 +7,18 @@ import threading
 from dataclasses import dataclass
 from collections import deque
 from typing import Any, Deque, Dict, Optional
-from prometheus_fastapi_instrumentator import Instrumentator
+# from prometheus_fastapi_instrumentator import Instrumentator
 
 import numpy as np
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-import logging
-import os
-import sys
-import json
-from datetime import datetime, timezone
+# import logging
+# import os
+# import sys
+# import json
+# from datetime import datetime, timezone
 
 DATA_DIR = os.getenv("DATA_DIR", "/data")
 RESULTS_DIR = os.getenv("RESULTS_DIR", "/results")
@@ -26,7 +26,7 @@ WORKER_TIMEOUT_SEC = float(os.getenv("WORKER_TIMEOUT_SEC", "10.0"))
 
 app = FastAPI(title="Scheduler (RR only, long-poll)")
 
-Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+# Instrumentator().instrument(app).expose(app, endpoint="/metrics")
 
 # ---------------------------
 # Worker registry
@@ -110,8 +110,16 @@ class RunState:
     speedup: float
     start_wall_ms: int
     jobs: Dict[str, JobState]
+
+    # runnable queue (arrived and ready)
     ready_q: Deque[str]
+
+    # arrivals not yet released, in increasing arrival_time order
+    pending_ids: list[str]
     total_jobs: int
+
+    # defaults after required
+    pending_idx: int = 0
     completed: int = 0
     done: bool = False
     jobs_csv: Optional[str] = None
@@ -127,7 +135,7 @@ RUN_CV = threading.Condition(RUN_LOCK)
 class StartReq(BaseModel):
     dataset_file: str
     quantum_ms: int = 10
-    speedup: float = 2000.0
+    speedup: float = 20000.0
     min_slots: int = 1
 
 class NextReq(BaseModel):
@@ -144,21 +152,38 @@ class DoneReq(BaseModel):
     started_wall_ms: int
     finished_wall_ms: int
 
+def release_arrivals(run: RunState, now_sim_ms: int):
+    # Move all jobs whose arrival_time <= now_sim_ms from pending -> ready_q
+    while run.pending_idx < len(run.pending_ids):
+        jid = run.pending_ids[run.pending_idx]
+        if run.jobs[jid].arrival_ms > now_sim_ms:
+            break
+        run.ready_q.append(jid)
+        run.pending_idx += 1
+
+
 def wall_to_sim(run: RunState, wall_ms: int) -> int:
     return int(round((wall_ms - run.start_wall_ms) * run.speedup))
 
 def load_jobs(dataset_path: str) -> Dict[str, JobState]:
     df = pd.read_csv(dataset_path)
-    needed = {"job_id", "service_time_ms"}
+
+    needed = {"job_id", "service_time_ms", "arrival_time_ms"}
     if not needed.issubset(df.columns):
         raise ValueError(f"Dataset must contain at least {sorted(needed)}")
+
+    # Ensure sorted
+    df = df.sort_values("arrival_time_ms", kind="stable")
 
     jobs: Dict[str, JobState] = {}
     for row in df.itertuples(index=False):
         jid = str(getattr(row, "job_id"))
         svc = int(getattr(row, "service_time_ms"))
-        jobs[jid] = JobState(job_id=jid, service_ms=svc, remaining_ms=svc, arrival_ms=0)
+        arr = int(getattr(row, "arrival_time_ms"))
+        jobs[jid] = JobState(job_id=jid, service_ms=svc, remaining_ms=svc, arrival_ms=arr)
+
     return jobs
+
 
 def finalize_run(run: RunState):
     rows = []
@@ -167,7 +192,6 @@ def finalize_run(run: RunState):
             continue
         response = j.finish_ms - j.arrival_ms
         waiting = response - j.service_ms
-        slowdown = response / max(1, j.service_ms)
         rows.append({
             "job_id": j.job_id,
             "service_time_ms": j.service_ms,
@@ -178,42 +202,69 @@ def finalize_run(run: RunState):
             "waiting_time_ms": waiting,
             "slices": j.slices,
             "preemptions": j.preemptions,
-            "slowdown": slowdown,
         })
+
     jobs_df = pd.DataFrame(rows)
 
-    p50 = float(np.percentile(jobs_df["response_time_ms"], 50))
-    p95 = float(np.percentile(jobs_df["response_time_ms"], 95))
-    p99 = float(np.percentile(jobs_df["response_time_ms"], 99))
+    # handle empty safely
+    if jobs_df.empty:
+        summary = {
+            "run_id": run.run_id,
+            "dataset_file": run.dataset_file,
+            "quantum_ms": run.quantum_ms,
+            "speedup": run.speedup,
+            "jobs": 0,
+            "mean_response_ms": 0.0,
+            "p50_response_ms": 0.0,
+            "p95_response_ms": 0.0,
+            "p99_response_ms": 0.0,
+            "mean_wait_ms": 0.0,
+            "avg_slices_per_job": 0.0,
+            "total_slots_at_end": total_alive_slots(),
+        }
+    else:
+        p50 = float(np.percentile(jobs_df["response_time_ms"], 50))
+        p95 = float(np.percentile(jobs_df["response_time_ms"], 95))
+        p99 = float(np.percentile(jobs_df["response_time_ms"], 99))
 
-    summary = {
-        "run_id": run.run_id,
-        "dataset_file": run.dataset_file,
-        "quantum_ms": run.quantum_ms,
-        "speedup": run.speedup,
-        "jobs": int(len(jobs_df)),
-        "mean_response_ms": float(jobs_df["response_time_ms"].mean()),
-        "p50_response_ms": p50,
-        "p95_response_ms": p95,
-        "p99_response_ms": p99,
-        "mean_wait_ms": float(jobs_df["waiting_time_ms"].mean()),
-        "avg_slices_per_job": float(jobs_df["slices"].mean()),
-        "total_slots_at_end": total_alive_slots(),
-    }
+        summary = {
+            "run_id": run.run_id,
+            "dataset_file": run.dataset_file,
+            "quantum_ms": run.quantum_ms,
+            "speedup": run.speedup,
+            "jobs": int(len(jobs_df)),
+            "mean_response_ms": float(jobs_df["response_time_ms"].mean()),
+            "p50_response_ms": p50,
+            "p95_response_ms": p95,
+            "p99_response_ms": p99,
+            "mean_wait_ms": float(jobs_df["waiting_time_ms"].mean()),
+            "avg_slices_per_job": float(jobs_df["slices"].mean()),
+            "total_slots_at_end": total_alive_slots(),
+        }
 
     os.makedirs(RESULTS_DIR, exist_ok=True)
     jobs_path = os.path.join(RESULTS_DIR, f"results_jobs_{run.run_id}.csv")
     run_path  = os.path.join(RESULTS_DIR, f"results_run_{run.run_id}.csv")
 
-    jobs_df.insert(0, "run_id", run.run_id)
-    jobs_df.insert(1, "quantum_ms", run.quantum_ms)
-    jobs_df.to_csv(jobs_path, index=False)
+    if not jobs_df.empty:
+        jobs_df.insert(0, "run_id", run.run_id)
+        jobs_df.insert(1, "quantum_ms", run.quantum_ms)
+        jobs_df.to_csv(jobs_path, index=False)
+    else:
+        # still create an empty jobs file with header if you want
+        pd.DataFrame(columns=[
+            "run_id","quantum_ms","job_id","service_time_ms","arrival_time_ms",
+            "first_start_time_ms","finish_time_ms","response_time_ms",
+            "waiting_time_ms","slices","preemptions"
+        ]).to_csv(jobs_path, index=False)
+
     pd.DataFrame([summary]).to_csv(run_path, index=False)
 
     run.jobs_csv = jobs_path
     run.run_csv = run_path
     run.summary = summary
     run.done = True
+
 
 @app.post("/start")
 def start(req: StartReq):
@@ -228,6 +279,10 @@ def start(req: StartReq):
         raise HTTPException(status_code=400, detail=f"Dataset not found: {dataset_path}")
 
     jobs = load_jobs(dataset_path)
+
+    # Create pending list sorted by arrival_time (load_jobs already sorts, but this is safe)
+    pending_ids = sorted(jobs.keys(), key=lambda jid: jobs[jid].arrival_ms)
+
     run = RunState(
         run_id=uuid.uuid4().hex[:10],
         dataset_file=req.dataset_file,
@@ -235,9 +290,13 @@ def start(req: StartReq):
         speedup=float(req.speedup),
         start_wall_ms=int(time.time() * 1000),
         jobs=jobs,
-        ready_q=deque(jobs.keys()),
+        ready_q=deque(),              # start empty
+        pending_ids=pending_ids,      # everything starts pending
         total_jobs=len(jobs),
     )
+
+    now_sim_ms = 0
+    release_arrivals(run, now_sim_ms)
 
     with RUN_CV:
         ACTIVE_RUN = run
@@ -260,7 +319,7 @@ def next_slice(req: NextReq):
     if not is_alive_worker_core(req.worker_id, req.core_id):
         raise HTTPException(status_code=400, detail="worker/core not alive or invalid core_id")
 
-    deadline = time.time() + (req.timeout_ms / 1000.0)
+    deadline_wall = time.time() + (req.timeout_ms / 1000.0)
 
     with RUN_CV:
         while True:
@@ -270,17 +329,45 @@ def next_slice(req: NextReq):
             if run.done or run.completed >= run.total_jobs:
                 return {"status": "done"}
 
+            # Update arrivals based on current sim time
+            now_wall_ms = int(time.time() * 1000)
+            now_sim_ms = wall_to_sim(run, now_wall_ms)
+            release_arrivals(run, now_sim_ms)
+
+            # If something is runnable, dispatch it
             if run.ready_q:
                 jid = run.ready_q.popleft()
                 job = run.jobs[jid]
                 slice_ms = min(run.quantum_ms, job.remaining_ms)
-                return {"status": "ok", "job_id": jid, "slice_ms": int(slice_ms), "remaining_before_ms": int(job.remaining_ms)}
+                return {
+                    "status": "ok",
+                    "job_id": jid,
+                    "slice_ms": int(slice_ms),
+                    "remaining_before_ms": int(job.remaining_ms),
+                    "arrival_time_ms": int(job.arrival_ms),
+                }
 
-            # No work right now: BLOCK until notified or timeout
-            remaining = deadline - time.time()
-            if remaining <= 0:
-                return {"status": "wait"}  # long-poll timed out
-            RUN_CV.wait(timeout=remaining)
+            # Nothing runnable. Compute how long we can sleep.
+            # 1) remaining time for request timeout
+            remaining_req = deadline_wall - time.time()
+            if remaining_req <= 0:
+                return {"status": "wait"}
+
+            # 2) time until next arrival (if any), in WALL seconds
+            if run.pending_idx < len(run.pending_ids):
+                next_jid = run.pending_ids[run.pending_idx]
+                next_arr_sim = run.jobs[next_jid].arrival_ms
+                delta_sim = max(0, next_arr_sim - now_sim_ms)
+
+                # sim_ms = wall_ms * speedup  => wall_ms = sim_ms / speedup
+                wait_until_arrival = max(0.001, (delta_sim / run.speedup) / 1000.0)
+                wait_time = min(remaining_req, wait_until_arrival)
+            else:
+                # No pending arrivals; only /done can make work runnable
+                wait_time = remaining_req
+
+            RUN_CV.wait(timeout=wait_time)
+
 
 @app.post("/done")
 def done(req: DoneReq):
@@ -313,7 +400,7 @@ def done(req: DoneReq):
         else:
             job.preemptions += 1
             run.ready_q.append(job.job_id)  # RR: back to tail
-            RUN_CV.notify()                 # wake one waiting /next caller
+            RUN_CV.notify_all()  # wake waiting /next callers
 
         if run.completed >= run.total_jobs:
             finalize_run(run)
