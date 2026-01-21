@@ -1,0 +1,109 @@
+$ python submit_runs.py --scheduler http://localhost:8000  --dataset dataset_rr_batch_largeq_opt_1k.csv --quanta 500,200,100,50,20,10
+ --min-slots 1  --speedup 2000
+Started run_id=32f4129e6d quantum_ms=500
+Progress: 514/1000 ( 51.4%) | elapsed 2s | rate 314.7 jobs/s | ETA 1s{
+  "run_id": "32f4129e6d",
+  "dataset_file": "dataset_rr_batch_largeq_opt_1k.csv",
+  "quantum_ms": 500,
+  "speedup": 2000.0,
+  "jobs": 1000,
+  "mean_response_ms": 3755624.0,
+  "p50_response_ms": 4183000.0,
+  "p95_response_ms": 5735299.999999999,
+  "p99_response_ms": 5870020.0,
+  "mean_wait_ms": 3755067.478,
+  "avg_slices_per_job": 1.601,
+  "total_slots_at_end": 32
+}
+jobs_csv: /results/results_jobs_32f4129e6d.csv
+run_csv : /results/results_run_32f4129e6d.csv
+
+Started run_id=c2a994284e quantum_ms=200
+Progress: 660/1000 ( 66.0%) | elapsed 5s | rate 280.8 jobs/s | ETA 1s{
+  "run_id": "c2a994284e",
+  "dataset_file": "dataset_rr_batch_largeq_opt_1k.csv",
+  "quantum_ms": 200,
+  "speedup": 2000.0,
+  "jobs": 1000,
+  "mean_response_ms": 6586472.0,
+  "p50_response_ms": 6993000.0,
+  "p95_response_ms": 9532100.0,
+  "p99_response_ms": 9684020.0,
+  "mean_wait_ms": 6585915.478,
+  "avg_slices_per_job": 3.299,
+  "total_slots_at_end": 32
+}
+jobs_csv: /results/results_jobs_c2a994284e.csv
+run_csv : /results/results_run_c2a994284e.csv
+
+Started run_id=ea3c0cd407 quantum_ms=100
+Progress: 803/1000 ( 80.3%) | elapsed 10s | rate 238.7 jobs/s | ETA 0s{
+  "run_id": "ea3c0cd407",
+  "dataset_file": "dataset_rr_batch_largeq_opt_1k.csv",
+  "quantum_ms": 100,
+  "speedup": 2000.0,
+  "jobs": 1000,
+  "mean_response_ms": 17409446.0,
+  "p50_response_ms": 18792000.0,
+  "p95_response_ms": 22386100.0,
+  "p99_response_ms": 22504080.0,
+  "mean_wait_ms": 17408889.478,
+  "avg_slices_per_job": 6.065,
+  "total_slots_at_end": 32
+}
+jobs_csv: /results/results_jobs_ea3c0cd407.csv
+run_csv : /results/results_run_ea3c0cd407.csv
+
+Started run_id=b7d564b23f quantum_ms=50
+Progress: 770/1000 ( 77.0%) | elapsed 20s | rate 125.9 jobs/s | ETA 1s{
+  "run_id": "b7d564b23f",
+  "dataset_file": "dataset_rr_batch_largeq_opt_1k.csv",
+  "quantum_ms": 50,
+  "speedup": 2000.0,
+  "jobs": 1000,
+  "mean_response_ms": 33175658.0,
+  "p50_response_ms": 35654000.0,
+  "p95_response_ms": 42612100.0,
+  "p99_response_ms": 42736020.0,
+  "mean_wait_ms": 33175101.478,
+  "avg_slices_per_job": 11.61,
+  "total_slots_at_end": 32
+}
+jobs_csv: /results/results_jobs_b7d564b23f.csv
+run_csv : /results/results_run_b7d564b23f.csv
+
+Started run_id=08a78e0c55 quantum_ms=20
+Progress: 986/1000 ( 98.6%) | elapsed 52s | rate 129.2 jobs/s | ETA 0s{s
+  "run_id": "08a78e0c55",
+  "dataset_file": "dataset_rr_batch_largeq_opt_1k.csv",
+  "quantum_ms": 20,
+  "speedup": 2000.0,
+  "jobs": 1000,
+  "mean_response_ms": 83346096.0,
+  "p50_response_ms": 90645000.0,
+  "p95_response_ms": 104830400.0,
+  "p99_response_ms": 105118060.0,
+  "mean_wait_ms": 83345539.478,
+  "avg_slices_per_job": 28.293,
+  "total_slots_at_end": 32
+}
+jobs_csv: /results/results_jobs_08a78e0c55.csv
+run_csv : /results/results_run_08a78e0c55.csv
+
+Started run_id=009e310875 quantum_ms=10
+Progress: 898/1000 ( 89.8%) | elapsed 1m59s | rate 53.1 jobs/s | ETA 1s{ss
+  "run_id": "009e310875",
+  "dataset_file": "dataset_rr_batch_largeq_opt_1k.csv",
+  "quantum_ms": 10,
+  "speedup": 2000.0,
+  "jobs": 1000,
+  "mean_response_ms": 193505546.0,
+  "p50_response_ms": 208336000.0,
+  "p95_response_ms": 241248300.0,
+  "p99_response_ms": 241716020.0,
+  "mean_wait_ms": 193504989.478,
+  "avg_slices_per_job": 56.098,
+  "total_slots_at_end": 32
+}
+jobs_csv: /results/results_jobs_009e310875.csv
+run_csv : /results/results_run_009e310875.csv
