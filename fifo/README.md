@@ -48,10 +48,48 @@ fifo/
   - `--dataset`: Fișier CSV cu job-uri
   - `--speedup`: Multiplicator simulare (20000 = 20000x mai rapid)
   - `--min-slots`: Număr minim de core-uri necesare
+  - `--replicas`: Număr de worker replicas
+  - `--cores`: Număr de core-uri per worker
 
-## Quick Start (Deploy în Kubernetes)
+### 5. Run Matrix (`run_matrix.py`)
+- **Rol**: Script pentru rularea automată a experimentelor cu toate combinațiile de replicas × cores
+- **Funcționalități**:
+  - Rulează scheduler și workers local (fără Kubernetes)
+  - Testează toate combinațiile de replicas × cores (produs cartezian)
+  - Salvează rezultatele în foldere structurate: `results/replicas_X_cores_Y/`
+  - Generează `summary.csv` cu statisticile tuturor configurațiilor
+- **Parametri**:
+  - `--dataset`: Dataset CSV (default: `dataset_fifo_burst_1k.csv`)
+  - `--replicas`: Listă de replicas separate prin virgulă (default: `2,4,8,16`)
+  - `--cores`: Listă de cores separate prin virgulă (default: `2,4,8,16`)
+  - `--speedup`: Factor de speedup (default: `20000.0`)
+  - `--results-dir`: Director pentru rezultate (default: `results/`)
+  - `--keep-temp`: Păstrează log-urile temporare pentru debugging
 
-**Cel mai rapid mod de a începe**:
+## Quick Start
+
+### Opțiunea 1: Rulare Locală cu run_matrix.py (Recomandat)
+
+**Cel mai rapid mod pentru experimente multiple**:
+
+```bash
+cd fifo
+
+# 1. Instalează dependențele
+pip install -r requirements.txt
+
+# 2. Generează dataset (opțional - dacă nu ai deja)
+python generate_dataset.py --output dataset_fifo_burst_1k.csv --num-jobs 1000 --mode burst
+
+# 3. Rulează toate combinațiile (2,4,8,16 replicas × 2,4,8,16 cores = 16 experimente)
+python run_matrix.py --dataset dataset_fifo_burst_1k.csv
+```
+
+Rezultatele vor fi salvate în `results/replicas_X_cores_Y/` și `summary.csv`.
+
+### Opțiunea 2: Deploy în Kubernetes
+
+**Pentru testare în Kubernetes**:
 
 ```bash
 # 1. Construiește imaginea Docker
@@ -59,20 +97,15 @@ cd fifo
 docker build -t fifo-sim:latest .
 
 # 2. Generează dataset (opțional - dacă nu ai deja)
-python generate_dataset.py --output dataset_fifo_1k.csv --num-jobs 1000
+python generate_dataset.py --output dataset_fifo_burst_1k.csv --num-jobs 1000 --mode burst
 
-# 3. Deploy în Kubernetes cu port-forward automat
-chmod +x deploy_background.sh
-./deploy_background.sh
+# 3. Deploy în Kubernetes cu port-forward automat (PowerShell)
+.\run_experiment.ps1 -Dataset dataset_fifo_burst_1k.csv
 
-# 4. În alt terminal, rulează experimentul
-python submit_runs.py --scheduler http://localhost:8000 --dataset dataset_fifo_1k.csv
-
-# 5. Când termini, oprește port-forward
-./stop_port_forward.sh
+# Sau manual:
+.\deploy_background.ps1
+python submit_runs.py --scheduler http://localhost:8000 --dataset dataset_fifo_burst_1k.csv
 ```
-
-Scheduler-ul va fi disponibil pe `http://localhost:8000` după deploy.
 
 ## Pași de Rulare (Detaliat)
 
@@ -81,11 +114,14 @@ Scheduler-ul va fi disponibil pe `http://localhost:8000` după deploy.
 Generează un CSV cu job-uri care se suprapun:
 
 ```bash
-python fifo/generate_dataset.py \
-  --output dataset_fifo_1k.csv \
+python generate_dataset.py \
+  --output dataset_fifo_burst_1k.csv \
   --num-jobs 1000 \
-  --arrival-interval-min 10 \
-  --arrival-interval-max 50 \
+  --mode burst \
+  --burst-size-min 20 \
+  --burst-size-max 40 \
+  --burst-interval-min 5000 \
+  --burst-interval-max 10000 \
   --service-time-min 100 \
   --service-time-max 500
 ```
@@ -121,11 +157,13 @@ python -m uvicorn worker:app --host 0.0.0.0 --port 8001
 
 #### C. Pornește Run
 ```bash
-python fifo/submit_runs.py \
+python submit_runs.py \
   --scheduler http://localhost:8000 \
-  --dataset dataset_fifo_1k.csv \
+  --dataset dataset_fifo_burst_1k.csv \
   --speedup 20000 \
-  --min-slots 2
+  --min-slots 2 \
+  --replicas 2 \
+  --cores 2
 ```
 
 ### 3. Rulare în Kubernetes
@@ -213,14 +251,14 @@ Acest script face deploy și rămâne activ cu port-forward în foreground (bloc
 **Opțiunea 1: Port-forward**
 ```bash
 kubectl port-forward svc/scheduler-svc-fifo 8000:8000
-python fifo/submit_runs.py --scheduler http://localhost:8000 --dataset dataset_fifo_1k.csv
+python submit_runs.py --scheduler http://localhost:8000 --dataset dataset_fifo_burst_1k.csv
 ```
 
 **Opțiunea 2: Execuție în pod**
 ```bash
 kubectl exec -it <scheduler-pod> -- python submit_runs.py \
   --scheduler http://localhost:8000 \
-  --dataset /data/dataset_fifo_1k.csv
+  --dataset /data/dataset_fifo_burst_1k.csv
 ```
 
 #### E. Colectează Rezultatele
@@ -237,67 +275,51 @@ kubectl cp <scheduler-pod>:/results/results_run_<run_id>.csv ./results_run.csv
 
 ## Experimente cu Diferite Configurații
 
-### Produs Cartezian: Replici × Core-uri
+### Rulare Automată cu run_matrix.py
 
-Pentru analiză comparativă, poți rula experimente cu toate combinațiile:
-
-| Replici Workers | Core-uri per Worker | Total Core-uri |
-|----------------|-------------------|---------------|
-| 2 | 2 | 4 |
-| 2 | 4 | 8 |
-| 2 | 8 | 16 |
-| 2 | 16 | 32 |
-| 3 | 2 | 6 |
-| 3 | 4 | 12 |
-| 3 | 8 | 24 |
-| 3 | 16 | 48 |
-| 5 | 2 | 10 |
-| 5 | 4 | 20 |
-| 5 | 8 | 40 |
-| 5 | 16 | 80 |
-| 10 | 2 | 20 |
-| 10 | 4 | 40 |
-| 10 | 8 | 80 |
-| 10 | 16 | 160 |
-| 20 | 2 | 40 |
-| 20 | 4 | 80 |
-| 20 | 8 | 160 |
-| 20 | 16 | 320 |
-
-### Script pentru Experimente Multiple
-
-Creează un script `run_experiments.sh`:
+**Recomandat**: Folosește `run_matrix.py` pentru a rula automat toate combinațiile:
 
 ```bash
-#!/bin/bash
+cd fifo
 
-# Configurații de testat
-REPLICAS=(2 3 5 10 20)
-CORES=(2 4 8 16)
-DATASET="dataset_fifo_1k.csv"
+# Rulează toate combinațiile default (2,4,8,16 × 2,4,8,16 = 16 experimente)
+python run_matrix.py --dataset dataset_fifo_burst_1k.csv
 
-for replicas in "${REPLICAS[@]}"; do
-  for cores in "${CORES[@]}"; do
-    echo "Running: $replicas replicas × $cores cores = $((replicas * cores)) total cores"
-    
-    # Modifică worker.yaml
-    sed -i "s/replicas: [0-9]*/replicas: $replicas/" worker.yaml
-    sed -i 's/value: "[0-9]*"/value: "'$cores'"/' worker.yaml
-    
-    # Deploy
-    kubectl apply -f worker.yaml
-    sleep 10  # Așteaptă ca workers să fie ready
-    
-    # Rulează
-    python submit_runs.py --scheduler http://localhost:8000 --dataset $DATASET
-    
-    # Salvează rezultatele cu nume descriptiv
-    kubectl cp <scheduler-pod>:/results ./results_${replicas}replicas_${cores}cores
-    
-    echo "Done: $replicas × $cores"
-  done
-done
+# Cu configurații custom
+python run_matrix.py \
+  --dataset dataset_fifo_burst_1k.csv \
+  --replicas "2,3,5,10,20" \
+  --cores "2,4,8,16"
+
+# Cu speedup diferit
+python run_matrix.py --dataset dataset_fifo_burst_1k.csv --speedup 10000.0
+
+# Păstrează log-urile temporare pentru debugging
+python run_matrix.py --dataset dataset_fifo_burst_1k.csv --keep-temp
 ```
+
+**Structura rezultatelor**:
+```
+results/
+├── replicas_2_cores_2/
+│   ├── results_jobs_dataset_fifo_burst_1k.csv
+│   └── results_run_dataset_fifo_burst_1k.csv
+├── replicas_2_cores_4/
+│   ├── results_jobs_dataset_fifo_burst_1k.csv
+│   └── results_run_dataset_fifo_burst_1k.csv
+├── ... (toate combinațiile)
+└── summary.csv  # Statistici pentru toate configurațiile
+```
+
+**Produs Cartezian**: Scriptul generează automat toate combinațiile:
+- 2,4,8,16 replicas × 2,4,8,16 cores = **16 experimente**
+- Fiecare experiment rulează scheduler și workers local
+- Rezultatele sunt salvate în foldere structurate
+- `summary.csv` conține statisticile pentru analiză comparativă
+
+### Rulare Manuală în Kubernetes
+
+Pentru testare în Kubernetes, folosește `run_experiment.ps1` (PowerShell) sau `run_experiments.sh` (Bash).
 
 ## Configurație Inițială (Default)
 
@@ -416,7 +438,7 @@ Script-ul va:
 **Modifică în script**:
 - `REPLICAS=(2 3 5 10 20)` - Număr de replici de testat
 - `CORES=(2 4 8 16)` - Număr de core-uri per worker
-- `DATASET="dataset_fifo_1k.csv"` - Fișier CSV de folosit
+- `DATASET="dataset_fifo_burst_1k.csv"` - Fișier CSV de folosit
 - `SCHEDULER_URL="http://localhost:8000"` - URL scheduler (sau `http://scheduler-svc-fifo:8000` pentru în cluster)
 
 ## Fișiere Importante

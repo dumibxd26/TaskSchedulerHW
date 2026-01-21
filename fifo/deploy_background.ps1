@@ -34,7 +34,7 @@ $ConfigMap = kubectl get configmap sim-datasets-fifo 2>&1
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Warning: ConfigMap 'sim-datasets-fifo' not found!" -ForegroundColor Yellow
     Write-Host "Please create it first with:" -ForegroundColor Yellow
-    Write-Host "  .\setup_configmap.ps1 dataset_fifo_1k.csv" -ForegroundColor Yellow
+    Write-Host "  kubectl create configmap sim-datasets-fifo --from-file=dataset_fifo_burst_1k.csv" -ForegroundColor Yellow
     Write-Host ""
     $response = Read-Host "Continue anyway? (y/n)"
     if ($response -ne "y" -and $response -ne "Y") {
@@ -115,7 +115,7 @@ if ($Job.State -eq "Running") {
     Write-Host "  kubectl get pods -l app=worker-fifo" -ForegroundColor Yellow
     Write-Host ""
     Write-Host "To test, run:" -ForegroundColor Yellow
-    Write-Host "  python submit_runs.py --scheduler http://localhost:${LocalPort} --dataset dataset_fifo_1k.csv" -ForegroundColor Yellow
+    Write-Host "  python submit_runs.py --scheduler http://localhost:${LocalPort} --dataset dataset_fifo_burst_1k.csv" -ForegroundColor Yellow
     Write-Host "==========================================" -ForegroundColor Green
 } else {
     Write-Host "Error: Port-forward failed to start" -ForegroundColor Red

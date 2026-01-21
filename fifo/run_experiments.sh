@@ -4,7 +4,7 @@
 # Configurații de testat
 REPLICAS=(2 3 5 10 20)
 CORES=(2 4 8 16)
-DATASET="dataset_fifo_1k.csv"
+DATASET="dataset_fifo_burst_1k.csv"
 SCHEDULER_URL="http://localhost:8000"
 
 # Backup original worker.yaml

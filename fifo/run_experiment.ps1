@@ -2,7 +2,7 @@
 # Face: build Docker, load in kind, deploy, run, copy results
 
 param(
-    [string]$Dataset = "dataset_fifo_1k.csv",
+    [string]$Dataset = "dataset_fifo_burst_1k.csv",
     [string]$SchedulerUrl = "http://localhost:8000",
     [switch]$SkipBuild = $false,
     [switch]$SkipDeploy = $false
