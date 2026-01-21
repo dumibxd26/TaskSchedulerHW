@@ -59,11 +59,9 @@ def main(base_dir: str, summary_name: str, rr_name: str, out_name: str) -> None:
         new_obj = dict(obj)  # shallow copy
         if extra is not None:
             matched += 1
-            # Add fields at top-level (easy to consume)
             new_obj.update(extra)
         else:
             missing += 1
-            # keep fields explicit if you want to spot gaps
             new_obj.update({"dataset": None, "machines": None, "cores": None, "quantum_ms": None})
 
         enriched.append(new_obj)

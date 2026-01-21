@@ -72,7 +72,6 @@ def main():
                     now = time.time()
                     elapsed = now - t0
 
-                    # compute rate + ETA from last sample
                     eta = float("inf")
                     rate = None
                     if last_completed is not None and last_t is not None:
@@ -96,7 +95,7 @@ def main():
 
                 time.sleep(args.poll_ms / 1000.0)
 
-            print()  # newline after each run
+            print() 
 
 if __name__ == "__main__":
     main()

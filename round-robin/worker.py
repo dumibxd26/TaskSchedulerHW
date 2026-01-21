@@ -84,7 +84,6 @@ async def core_driver(client: httpx.AsyncClient, core_id: int):
     No busy-wait: /next is long-polled and blocks server-side.
     """
     while True:
-        # Long-poll for work
         try:
             r = await client.post(
                 f"{SCHEDULER_URL}/next",
@@ -112,7 +111,7 @@ async def core_driver(client: httpx.AsyncClient, core_id: int):
             continue
 
         if st in ("wait", "no_run", "done"):
-            # No spinning; back off a bit (rare because /next long-polls)
+            # No spinning; back off a bit  
             await asyncio.sleep(0.2)
             continue
 
@@ -131,21 +130,17 @@ async def main_loop():
 
         asyncio.create_task(heartbeat_loop(client))
 
-        # Start one driver per core
         for core_id in range(CORES):
             asyncio.create_task(core_driver(client, core_id))
 
-        # Keep process alive
         while True:
             await asyncio.sleep(3600)
 
 @app.on_event("startup")
 async def on_startup():
-    # Start core threads (blocked until assigned)
     for core_id in range(CORES):
         threading.Thread(target=core_thread, args=(core_id,), daemon=True).start()
 
-    # Start main loop (server thread)
     asyncio.create_task(main_loop())
 
 @app.get("/health")

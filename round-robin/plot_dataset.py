@@ -31,7 +31,7 @@ def concurrency_on_grid(df: pd.DataFrame, step_ms: int):
     t_changes, c_changes = concurrency_sweep(df)
 
     x_min = 0
-    x_max = int(df["arrival_time_ms"].max())  # <-- last ARRIVAL only (what you asked)
+    x_max = int(df["arrival_time_ms"].max())  
 
     grid = np.arange(x_min, x_max + step_ms, step_ms, dtype=np.int64)
     idx = np.searchsorted(t_changes, grid, side="right") - 1
@@ -41,11 +41,9 @@ def concurrency_on_grid(df: pd.DataFrame, step_ms: int):
 def plot(csv_path: str, title: str, step_ms: int, bin_ms: int):
     df = pd.read_csv(csv_path).sort_values("arrival_time_ms", kind="stable")
 
-    # Force first arrival to be the left bound (you said it will always be 0)
     x_min = 0
     x_max = int(df["arrival_time_ms"].max())
 
-    # 1) overlap line (sampled)
     g, conc, _, _ = concurrency_on_grid(df, step_ms=step_ms)
     plt.figure()
     plt.plot(g, conc)
@@ -56,7 +54,6 @@ def plot(csv_path: str, title: str, step_ms: int, bin_ms: int):
     plt.tight_layout()
     plt.show()
 
-    # 2) arrival density histogram
     bins = np.arange(x_min, x_max + bin_ms, bin_ms)
     counts, edges = np.histogram(df["arrival_time_ms"].to_numpy(), bins=bins)
     centers = (edges[:-1] + edges[1:]) / 2
