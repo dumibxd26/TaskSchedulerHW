@@ -1,2 +1,0 @@
-run_id,dataset_file,speedup,jobs,mean_response_ms,p50_response_ms,p95_response_ms,p99_response_ms,mean_wait_ms,mean_execution_ms,total_slots_at_end
-bdad150575,dataset_fifo_1k.csv,20000.0,1000,18561255.542,17924831.5,34631951.449999996,36169952.81,18544535.542,299.768,4

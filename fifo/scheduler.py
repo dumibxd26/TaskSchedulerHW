@@ -4,7 +4,7 @@ import os
 import time
 import uuid
 import threading
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from collections import deque
 from typing import Any, Deque, Dict, Optional
 from prometheus_fastapi_instrumentator import Instrumentator
@@ -111,7 +111,10 @@ class RunState:
     ready_q: Deque[str]  # FIFO queue
     pending_jobs: Dict[str, JobState]  # Jobs not yet arrived (arrival_time > current_time)
     total_jobs: int
+    replicas: int = 2  # Number of worker replicas
+    cores: int = 2  # Number of cores per worker
     current_sim_ms: int = 0  # Current simulated time
+    running_jobs: Dict[str, int] = field(default_factory=dict)  # job_id -> finish_ms for jobs currently running
     completed: int = 0
     done: bool = False
     jobs_csv: Optional[str] = None
@@ -131,6 +134,8 @@ class StartReq(BaseModel):
     dataset_file: str
     speedup: float = 2000.0
     min_slots: int = 1
+    replicas: int = 2  # Number of worker replicas
+    cores: int = 2  # Number of cores per worker
 
 class NextReq(BaseModel):
     worker_id: str
@@ -169,15 +174,21 @@ def load_jobs(dataset_path: str) -> Dict[str, JobState]:
 def arrival_thread_func(run: RunState):
     """Thread that adds jobs to ready_q when their arrival_time is reached."""
     while not run.done:
-        # Convert current wall time to simulation time
+        # Convert current wall time to simulation time for checking arrival times
+        # But don't use this to update current_sim_ms (which tracks job processing)
         current_wall_ms = int(time.time() * 1000)
-        current_sim = wall_to_sim(run, current_wall_ms)
+        current_sim_from_wall = wall_to_sim(run, current_wall_ms)
         
         # Check pending jobs and move them to ready_q if arrival time reached
         jobs_to_add = []
         with RUN_CV:
             for jid, job in list(run.pending_jobs.items()):
-                if job.arrival_ms <= current_sim:
+                # For jobs with arrival_time > 0, check against wall time conversion
+                # For jobs with arrival_time = 0, they're already in ready_q
+                # Use max of current_sim_ms (job processing time) and wall time conversion
+                # This ensures jobs arrive at their scheduled time
+                arrival_check_time = max(run.current_sim_ms, current_sim_from_wall)
+                if job.arrival_ms <= arrival_check_time:
                     jobs_to_add.append(jid)
                     del run.pending_jobs[jid]
             
@@ -185,8 +196,9 @@ def arrival_thread_func(run: RunState):
                 run.ready_q.append(jid)
                 RUN_CV.notify_all()
             
-            # Update current simulation time
-            run.current_sim_ms = max(run.current_sim_ms, current_sim)
+            # Don't update current_sim_ms from wall time here
+            # current_sim_ms should only advance when jobs are actually processed
+            # (when allocated in /next or when finished in /done)
         
         if not run.done:
             time.sleep(0.01)  # Check every 10ms wall time
@@ -241,9 +253,14 @@ def finalize_run(run: RunState):
         "total_slots_at_end": total_alive_slots(),
     }
     
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-    jobs_path = os.path.join(RESULTS_DIR, f"results_jobs_{run.run_id}.csv")
-    run_path  = os.path.join(RESULTS_DIR, f"results_run_{run.run_id}.csv")
+    # Create structured results folder: results/replicas_X_cores_Y/
+    results_subdir = os.path.join(RESULTS_DIR, f"replicas_{run.replicas}_cores_{run.cores}")
+    os.makedirs(results_subdir, exist_ok=True)
+    
+    # Use dataset name (without extension) as filename instead of random run_id
+    dataset_name = os.path.splitext(run.dataset_file)[0]
+    jobs_path = os.path.join(results_subdir, f"results_jobs_{dataset_name}.csv")
+    run_path  = os.path.join(results_subdir, f"results_run_{dataset_name}.csv")
     
     jobs_df.insert(0, "run_id", run.run_id)
     jobs_df.to_csv(jobs_path, index=False)
@@ -287,6 +304,8 @@ def start(req: StartReq):
         ready_q=ready_q,
         pending_jobs=pending_jobs,
         total_jobs=len(jobs),
+        replicas=int(req.replicas),
+        cores=int(req.cores),
     )
     
     with RUN_CV:
@@ -327,6 +346,32 @@ def next_job(req: NextReq):
             if run.ready_q:
                 jid = run.ready_q.popleft()  # FIFO: first come, first served
                 job = run.jobs[jid]
+                
+                # Set start_time when job is allocated (not when worker starts execution)
+                # This ensures start_time reflects when job becomes available, not wall time delay
+                if job.start_ms is None:
+                    # Get number of available slots
+                    num_slots = total_alive_slots()
+                    num_running = len(run.running_jobs)
+                    
+                    # Calculate earliest available slot time
+                    # Use the minimum of:
+                    # - current_sim_ms: when last job finished (slot became available)
+                    # - min(running_jobs.values()): when next running job will finish
+                    # This ensures we use slots as soon as they become available
+                    candidates = [run.current_sim_ms]
+                    if run.running_jobs:
+                        candidates.append(min(run.running_jobs.values()))
+                    earliest_slot = min(candidates)
+                    
+                    # Start time should be max of arrival time and earliest available slot
+                    job.start_ms = max(job.arrival_ms, earliest_slot)
+                    # Update current_sim_ms to reflect that job is starting now
+                    run.current_sim_ms = max(run.current_sim_ms, job.start_ms)
+                
+                # Track this job as running (will be removed when it finishes)
+                run.running_jobs[jid] = job.start_ms + job.service_ms
+                
                 # FIFO: execute entire service_time (no slicing/preemption)
                 return {"status": "ok", "job_id": jid, "execution_ms": int(job.service_ms)}
             
@@ -352,17 +397,29 @@ def done(req: DoneReq):
         if job is None:
             raise HTTPException(status_code=400, detail="unknown job_id")
         
-        started_sim = wall_to_sim(run, int(req.started_wall_ms))
-        finished_sim = wall_to_sim(run, int(req.finished_wall_ms))
-        
+        # start_ms should already be set when job was allocated in /next
+        # We use the allocated start time (when slot became available in simulated time)
+        # NOT wall time conversion, because that would introduce real-world delays into simulated time
+        # The allocated start_ms already reflects when the job should start in simulated time
         if job.start_ms is None:
-            job.start_ms = started_sim
+            # Fallback: if somehow not set during allocation, use wall time conversion
+            # But this should rarely happen
+            started_sim = wall_to_sim(run, int(req.started_wall_ms))
+            job.start_ms = max(job.arrival_ms, started_sim)
+        # Otherwise, keep the allocated start_ms (it's already correct in simulated time)
         
         # finish_time should be start_time + service_time (in simulated time)
         # This is more accurate than using wall time conversion for very fast executions
         job.finish_ms = job.start_ms + job.service_ms
         job.cpu_percent = req.cpu_percent if req.cpu_percent is not None else None
         job.memory_mb = req.memory_mb if req.memory_mb is not None else None
+        
+        # This slot becomes available at job.finish_ms
+        slot_available_at = job.finish_ms
+        
+        # Remove this job from running jobs (slot is now available)
+        if req.job_id in run.running_jobs:
+            del run.running_jobs[req.job_id]
         
         # Update current simulation time (use calculated finish_ms, not converted wall time)
         run.current_sim_ms = max(run.current_sim_ms, job.finish_ms)
@@ -373,6 +430,6 @@ def done(req: DoneReq):
             finalize_run(run)
             RUN_CV.notify_all()
         else:
-            RUN_CV.notify()  # wake one waiting /next caller
+            RUN_CV.notify_all()  # wake all waiting /next callers
     
     return {"status": "ok"}

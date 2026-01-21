@@ -15,14 +15,63 @@ Write-Host "FIFO Experiment - Full Automation" -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Verifica ca kubectl functioneaza
-Write-Host "Step 0: Checking Kubernetes cluster..." -ForegroundColor Green
+# Verifica ca Docker ruleaza
+Write-Host "Step 0: Checking Docker..." -ForegroundColor Green
+try {
+    $null = docker ps 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Error: Docker is not running or not accessible" -ForegroundColor Red
+        Write-Host "Please start Docker Desktop and wait for it to be ready" -ForegroundColor Yellow
+        exit 1
+    }
+    Write-Host "[OK] Docker is running" -ForegroundColor Green
+} catch {
+    Write-Host "Error: Docker not found or not accessible" -ForegroundColor Red
+    Write-Host "Please install and start Docker Desktop" -ForegroundColor Yellow
+    exit 1
+}
+
+# Verifica si creeaza clusterul kind daca nu exista
+Write-Host ""
+Write-Host "Step 0.5: Checking kind cluster 'fifo-cluster'..." -ForegroundColor Green
+$oldErrorAction = $ErrorActionPreference
+$ErrorActionPreference = "SilentlyContinue"
+$clustersOutput = kind get clusters 2>&1
+$ErrorActionPreference = $oldErrorAction
+
+if ($LASTEXITCODE -eq 0 -and $clustersOutput) {
+    $clusterExists = ($clustersOutput -match "fifo-cluster")
+} else {
+    $clusterExists = $false
+}
+
+if (-not $clusterExists) {
+    Write-Host "Cluster 'fifo-cluster' does not exist. Creating it..." -ForegroundColor Yellow
+    kind create cluster --name fifo-cluster
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Error: Failed to create kind cluster" -ForegroundColor Red
+        exit 1
+    }
+    Write-Host "[OK] Cluster 'fifo-cluster' created" -ForegroundColor Green
+    # Asteapta putin ca clusterul sa fie gata
+    Start-Sleep -Seconds 5
+} else {
+    Write-Host "[OK] Cluster 'fifo-cluster' already exists" -ForegroundColor Green
+}
+
+# Verifica ca kubectl poate accesa clusterul
+Write-Host ""
+Write-Host "Step 0.6: Verifying cluster accessibility..." -ForegroundColor Green
 try {
     $null = kubectl get nodes 2>&1
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "Error: Cannot connect to Kubernetes cluster" -ForegroundColor Red
-        Write-Host "Please ensure cluster is running (e.g., kind create cluster --name fifo-cluster)" -ForegroundColor Yellow
-        exit 1
+        Write-Host "Warning: Cannot connect to cluster. Trying to set context..." -ForegroundColor Yellow
+        kubectl cluster-info --context kind-fifo-cluster 2>&1 | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "Error: Cannot connect to Kubernetes cluster" -ForegroundColor Red
+            Write-Host "Try: kind delete cluster --name fifo-cluster, then run this script again" -ForegroundColor Yellow
+            exit 1
+        }
     }
     Write-Host "[OK] Cluster is accessible" -ForegroundColor Green
 } catch {
@@ -30,21 +79,22 @@ try {
     exit 1
 }
 
-# Verifica ConfigMap
+# Verifica si actualizeaza ConfigMap cu noul dataset
 Write-Host ""
-Write-Host "Step 1: Checking ConfigMap..." -ForegroundColor Green
-$configMap = kubectl get configmap sim-datasets-fifo 2>&1
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "ConfigMap not found. Creating..." -ForegroundColor Yellow
-    if (-not (Test-Path $Dataset)) {
-        Write-Host "Error: Dataset file '$Dataset' not found!" -ForegroundColor Red
-        exit 1
-    }
-    kubectl create configmap sim-datasets-fifo --from-file=$Dataset --dry-run=client -o yaml | kubectl apply -f -
-    Write-Host "[OK] ConfigMap created" -ForegroundColor Green
-} else {
-    Write-Host "[OK] ConfigMap exists" -ForegroundColor Green
+Write-Host "Step 1: Updating ConfigMap with dataset..." -ForegroundColor Green
+if (-not (Test-Path $Dataset)) {
+    Write-Host "Error: Dataset file '$Dataset' not found!" -ForegroundColor Red
+    exit 1
 }
+Write-Host "Creating/updating ConfigMap with dataset: $Dataset" -ForegroundColor Yellow
+# ConfigMap-ul trebuie să aibă numele din scheduler.yaml (sim-datasets-fifo)
+# și fișierul trebuie să aibă numele corect pentru ca scheduler-ul să-l găsească
+kubectl create configmap sim-datasets-fifo --from-file=$Dataset --dry-run=client -o yaml | kubectl apply -f -
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Error: Failed to create/update ConfigMap" -ForegroundColor Red
+    exit 1
+}
+Write-Host "[OK] ConfigMap updated with dataset" -ForegroundColor Green
 
 # Build Docker image
 if (-not $SkipBuild) {
@@ -65,6 +115,31 @@ if (-not $SkipBuild) {
         exit 1
     }
     Write-Host "[OK] Image loaded into cluster" -ForegroundColor Green
+    
+    Write-Host ""
+    Write-Host "Step 3.5: Restarting pods to use new image..." -ForegroundColor Green
+    $oldErrorAction = $ErrorActionPreference
+    $ErrorActionPreference = "SilentlyContinue"
+    $schedulerPods = kubectl get pods -l app=scheduler-fifo --no-headers 2>&1
+    $workerPods = kubectl get pods -l app=worker-fifo --no-headers 2>&1
+    $ErrorActionPreference = $oldErrorAction
+    
+    if ($schedulerPods -or $workerPods) {
+        Write-Host "Deleting old pods..." -ForegroundColor Yellow
+        kubectl delete pods -l app=scheduler-fifo 2>&1 | Out-Null
+        kubectl delete pods -l app=worker-fifo 2>&1 | Out-Null
+        Write-Host "Waiting for new pods to be ready..." -ForegroundColor Yellow
+        Start-Sleep -Seconds 5
+        
+        $ErrorActionPreference = "SilentlyContinue"
+        kubectl wait --for=condition=ready pod -l app=scheduler-fifo --timeout=60s 2>&1 | Out-Null
+        kubectl wait --for=condition=ready pod -l app=worker-fifo --timeout=120s 2>&1 | Out-Null
+        $ErrorActionPreference = $oldErrorAction
+        
+        Write-Host "[OK] Pods restarted with new image" -ForegroundColor Green
+    } else {
+        Write-Host "No existing pods found. Pods will be created during deployment." -ForegroundColor Yellow
+    }
 } else {
     Write-Host ""
     Write-Host "Step 2-3: Skipping build (using existing image)" -ForegroundColor Yellow
@@ -173,14 +248,33 @@ try {
     }
 }
 
+# Citeste configurația din worker.yaml
+Write-Host ""
+Write-Host "Step 7.5: Reading configuration from worker.yaml..." -ForegroundColor Green
+$workerYaml = Get-Content "worker.yaml" -Raw
+$replicas = ($workerYaml | Select-String -Pattern "replicas:\s*(\d+)" | ForEach-Object { $_.Matches[0].Groups[1].Value })
+$cores = ($workerYaml | Select-String -Pattern 'value:\s*"(\d+)"' | Select-Object -First 1 | ForEach-Object { $_.Matches[0].Groups[1].Value })
+
+if ([string]::IsNullOrEmpty($replicas)) {
+    $replicas = "2"
+    Write-Host "Warning: Could not parse replicas from worker.yaml, using default: 2" -ForegroundColor Yellow
+}
+if ([string]::IsNullOrEmpty($cores)) {
+    $cores = "2"
+    Write-Host "Warning: Could not parse cores from worker.yaml, using default: 2" -ForegroundColor Yellow
+}
+
+Write-Host "Configuration: replicas=$replicas, cores=$cores" -ForegroundColor Cyan
+
 # Ruleaza experimentul
 Write-Host ""
 Write-Host "Step 8: Running experiment..." -ForegroundColor Green
 Write-Host "Dataset: $Dataset" -ForegroundColor Cyan
 Write-Host "Scheduler: $SchedulerUrl" -ForegroundColor Cyan
+Write-Host "Replicas: $replicas, Cores: $cores" -ForegroundColor Cyan
 Write-Host ""
 
-$runOutput = python submit_runs.py --scheduler $SchedulerUrl --dataset $Dataset 2>&1
+$runOutput = python submit_runs.py --scheduler $SchedulerUrl --dataset $Dataset --replicas $replicas --cores $cores 2>&1
 $runOutput
 
 if ($LASTEXITCODE -ne 0) {
@@ -202,33 +296,37 @@ if ([string]::IsNullOrEmpty($runId)) {
 Write-Host ""
 Write-Host "Step 9: Copying results..." -ForegroundColor Green
 
-if (-not [string]::IsNullOrEmpty($runId)) {
-    $jobsFile = "results_jobs_${runId}.csv"
-    $runFile = "results_run_${runId}.csv"
-} else {
-    # Incearca sa gaseste ultimele fisiere
-    Write-Host "Finding latest results in scheduler pod..." -ForegroundColor Yellow
-    $resultsList = kubectl exec $schedulerPod -- ls /results 2>&1
-    $jobsFile = ($resultsList | Select-String -Pattern "results_jobs_\w+\.csv" | Select-Object -Last 1).ToString().Trim()
-    $runFile = ($resultsList | Select-String -Pattern "results_run_\w+\.csv" | Select-Object -Last 1).ToString().Trim()
-}
+# Construiește numele fișierelor bazat pe dataset (fără extensie)
+$datasetName = [System.IO.Path]::GetFileNameWithoutExtension($Dataset)
+$resultsSubdir = "replicas_${replicas}_cores_${cores}"
+$jobsFile = "results_jobs_${datasetName}.csv"
+$runFile = "results_run_${datasetName}.csv"
 
-if (-not [string]::IsNullOrEmpty($jobsFile) -and -not [string]::IsNullOrEmpty($runFile)) {
-    kubectl cp "${schedulerPod}:/results/${jobsFile}" $jobsFile 2>&1 | Out-Null
-    kubectl cp "${schedulerPod}:/results/${runFile}" $runFile 2>&1 | Out-Null
-    
-    if ((Test-Path $jobsFile) -and (Test-Path $runFile)) {
-        Write-Host "[OK] Results copied:" -ForegroundColor Green
-        Write-Host "  - $jobsFile" -ForegroundColor Cyan
-        Write-Host "  - $runFile" -ForegroundColor Cyan
-    } else {
-        Write-Host "Warning: Some result files may not have been copied" -ForegroundColor Yellow
-    }
+# Creează folderul local pentru rezultate
+$localResultsDir = "results\$resultsSubdir"
+New-Item -ItemType Directory -Force -Path $localResultsDir | Out-Null
+
+# Copiază fișierele din folderul structurat din pod
+$remoteJobsPath = "/results/${resultsSubdir}/${jobsFile}"
+$remoteRunPath = "/results/${resultsSubdir}/${runFile}"
+$localJobsPath = "$localResultsDir\$jobsFile"
+$localRunPath = "$localResultsDir\$runFile"
+
+Write-Host "Copying from pod: $remoteJobsPath -> $localJobsPath" -ForegroundColor Yellow
+kubectl cp "${schedulerPod}:${remoteJobsPath}" $localJobsPath 2>&1 | Out-Null
+kubectl cp "${schedulerPod}:${remoteRunPath}" $localRunPath 2>&1 | Out-Null
+
+if ((Test-Path $localJobsPath) -and (Test-Path $localRunPath)) {
+    Write-Host "[OK] Results copied to:" -ForegroundColor Green
+    Write-Host "  - $localJobsPath" -ForegroundColor Cyan
+    Write-Host "  - $localRunPath" -ForegroundColor Cyan
 } else {
-    Write-Host "Warning: Could not determine result file names" -ForegroundColor Yellow
-    Write-Host "You can manually copy with:" -ForegroundColor Yellow
-    Write-Host "  kubectl cp ${schedulerPod}:/results/results_jobs_<run_id>.csv ." -ForegroundColor White
-    Write-Host "  kubectl cp ${schedulerPod}:/results/results_run_<run_id>.csv ." -ForegroundColor White
+    Write-Host "Warning: Some result files may not have been copied" -ForegroundColor Yellow
+    Write-Host "Trying alternative paths..." -ForegroundColor Yellow
+    # Fallback: încearcă să găsească fișierele manual
+    $resultsList = kubectl exec $schedulerPod -- find /results -name "*.csv" 2>&1
+    Write-Host "Available files in pod:" -ForegroundColor Yellow
+    Write-Host $resultsList -ForegroundColor White
 }
 
 Write-Host ""

@@ -195,7 +195,7 @@ async def core_driver(client: httpx.AsyncClient, core_id: int):
         try:
             r = await client.post(
                 f"{SCHEDULER_URL}/next",
-                json={"worker_id": WORKER_ID, "core_id": core_id, "timeout_ms": 20000},
+                json={"worker_id": WORKER_ID, "core_id": core_id, "timeout_ms": 1000},  # Reduced timeout for faster polling
             )
             r.raise_for_status()
             msg = r.json()

@@ -61,6 +61,8 @@ def main():
     ap.add_argument("--dataset", required=True)
     ap.add_argument("--speedup", type=float, default=20000.0)
     ap.add_argument("--min-slots", type=int, default=1, help="Total cores required across all workers")
+    ap.add_argument("--replicas", type=int, default=2, help="Number of worker replicas")
+    ap.add_argument("--cores", type=int, default=2, help="Number of cores per worker")
     ap.add_argument("--poll-ms", type=int, default=500)
     args = ap.parse_args()
 
@@ -71,6 +73,8 @@ def main():
             "dataset_file": args.dataset,
             "speedup": args.speedup,
             "min_slots": args.min_slots,
+            "replicas": args.replicas,
+            "cores": args.cores,
         }
 
         r = c.post(f"{args.scheduler}/start", json=start_payload)

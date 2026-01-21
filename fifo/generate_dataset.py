@@ -3,6 +3,7 @@
 import argparse
 import random
 import csv
+from collections import Counter
 
 def generate_dataset(
     output_file: str,
@@ -12,50 +13,96 @@ def generate_dataset(
     service_time_min: int = 100,
     service_time_max: int = 500,
     job_id_prefix: str = "F",
+    burst_mode: bool = False,
+    burst_size_min: int = 5,
+    burst_size_max: int = 30,
+    burst_interval_min: int = 1000,
+    burst_interval_max: int = 5000,
 ):
     """
     Generate a CSV dataset with overlapping jobs for FIFO scheduling.
     
-    Strategy:
+    Strategy (normal mode):
     - Jobs arrive with intervals between arrival_interval_min and arrival_interval_max ms
     - Each job has service_time between service_time_min and service_time_max ms
     - service_time is typically > arrival_interval, causing guaranteed overlapping
     - This creates a queue scenario where jobs wait for previous ones to complete
     
+    Strategy (burst mode):
+    - Jobs arrive in bursts: multiple jobs at the same arrival_time
+    - Burst size: between burst_size_min and burst_size_max jobs
+    - Between bursts: interval between burst_interval_min and burst_interval_max ms
+    - Creates large queues (30+ jobs) to stress-test FIFO algorithm
+    
     Args:
         output_file: Path to output CSV file
         num_jobs: Number of jobs to generate
-        arrival_interval_min: Minimum time between job arrivals (ms)
-        arrival_interval_max: Maximum time between job arrivals (ms)
+        arrival_interval_min: Minimum time between job arrivals (ms) - normal mode
+        arrival_interval_max: Maximum time between job arrivals (ms) - normal mode
         service_time_min: Minimum service time per job (ms)
         service_time_max: Maximum service time per job (ms)
         job_id_prefix: Prefix for job IDs (e.g., "F" for FIFO)
+        burst_mode: If True, generate burst arrivals (multiple jobs at same time)
+        burst_size_min: Minimum jobs per burst (burst mode)
+        burst_size_max: Maximum jobs per burst (burst mode)
+        burst_interval_min: Minimum time between bursts (ms) - burst mode
+        burst_interval_max: Maximum time between bursts (ms) - burst mode
     """
     
     # Generate jobs
     jobs = []
     current_arrival = 0
+    job_counter = 1
     
-    for i in range(1, num_jobs + 1):
-        # Generate arrival time (progressive with interval)
-        if i > 1:
-            interval = random.randint(arrival_interval_min, arrival_interval_max)
-            current_arrival += interval
-        else:
-            current_arrival = 0  # First job arrives at time 0
-        
-        # Generate service time (longer than typical interval to ensure overlap)
-        service_time = random.randint(service_time_min, service_time_max)
-        
-        # Generate job ID
-        job_id = f"{job_id_prefix}{i:05d}"
-        
-        jobs.append({
-            "job_id": job_id,
-            "service_time_ms": service_time,
-            "arrival_time_ms": current_arrival,
-            "priority": 1,  # Default priority
-        })
+    if burst_mode:
+        # Burst mode: generate jobs in bursts
+        while job_counter <= num_jobs:
+            # Determine burst size
+            remaining_jobs = num_jobs - job_counter + 1
+            burst_size = min(
+                random.randint(burst_size_min, burst_size_max),
+                remaining_jobs
+            )
+            
+            # Generate all jobs in this burst with the same arrival_time
+            for _ in range(burst_size):
+                service_time = random.randint(service_time_min, service_time_max)
+                job_id = f"{job_id_prefix}{job_counter:05d}"
+                
+                jobs.append({
+                    "job_id": job_id,
+                    "service_time_ms": service_time,
+                    "arrival_time_ms": current_arrival,
+                    "priority": 1,
+                })
+                job_counter += 1
+            
+            # Move to next burst time (if not last burst)
+            if job_counter <= num_jobs:
+                interval = random.randint(burst_interval_min, burst_interval_max)
+                current_arrival += interval
+    else:
+        # Normal mode: progressive arrivals
+        for i in range(1, num_jobs + 1):
+            # Generate arrival time (progressive with interval)
+            if i > 1:
+                interval = random.randint(arrival_interval_min, arrival_interval_max)
+                current_arrival += interval
+            else:
+                current_arrival = 0  # First job arrives at time 0
+            
+            # Generate service time (longer than typical interval to ensure overlap)
+            service_time = random.randint(service_time_min, service_time_max)
+            
+            # Generate job ID
+            job_id = f"{job_id_prefix}{i:05d}"
+            
+            jobs.append({
+                "job_id": job_id,
+                "service_time_ms": service_time,
+                "arrival_time_ms": current_arrival,
+                "priority": 1,  # Default priority
+            })
     
     # Sort by arrival_time (should already be sorted, but ensure it)
     jobs.sort(key=lambda x: x["arrival_time_ms"])
@@ -69,37 +116,64 @@ def generate_dataset(
     
     # Print statistics
     total_time = jobs[-1]["arrival_time_ms"] + jobs[-1]["service_time_ms"]
-    avg_arrival_interval = sum(jobs[i]["arrival_time_ms"] - jobs[i-1]["arrival_time_ms"] 
-                               for i in range(1, len(jobs))) / (len(jobs) - 1) if len(jobs) > 1 else 0
     avg_service_time = sum(j["service_time_ms"] for j in jobs) / len(jobs)
-    overlapping_ratio = avg_service_time / avg_arrival_interval if avg_arrival_interval > 0 else float('inf')
+    
+    # Calculate unique arrival times (for burst analysis)
+    unique_arrivals = len(set(j["arrival_time_ms"] for j in jobs))
+    jobs_per_arrival = len(jobs) / unique_arrivals if unique_arrivals > 0 else 0
+    
+    # Calculate max queue size (jobs arriving at same time)
+    arrival_counts = Counter(j["arrival_time_ms"] for j in jobs)
+    max_burst_size = max(arrival_counts.values()) if arrival_counts else 0
     
     print(f"Generated dataset: {output_file}")
+    print(f"  Mode: {'BURST' if burst_mode else 'NORMAL'}")
     print(f"  Jobs: {num_jobs}")
+    print(f"  Unique arrival times: {unique_arrivals}")
+    print(f"  Average jobs per arrival: {jobs_per_arrival:.1f}")
+    print(f"  Max burst size (jobs at same time): {max_burst_size}")
     print(f"  Arrival time range: 0 - {jobs[-1]['arrival_time_ms']} ms")
-    print(f"  Average arrival interval: {avg_arrival_interval:.1f} ms")
     print(f"  Service time range: {service_time_min} - {service_time_max} ms")
     print(f"  Average service time: {avg_service_time:.1f} ms")
-    print(f"  Overlapping ratio: {overlapping_ratio:.2f}x (service_time / arrival_interval)")
     print(f"  Total simulation time (last arrival + last service): {total_time} ms")
     
-    if overlapping_ratio > 1.5:
-        print(f"  [OK] Good overlapping: jobs will queue up (ratio > 1.5)")
-    elif overlapping_ratio > 1.0:
-        print(f"  [WARN] Moderate overlapping: some queuing expected")
+    if burst_mode:
+        if max_burst_size >= 20:
+            print(f"  [OK] Large bursts: will create queues of {max_burst_size}+ jobs")
+        elif max_burst_size >= 10:
+            print(f"  [OK] Medium bursts: will create queues of {max_burst_size} jobs")
+        else:
+            print(f"  [WARN] Small bursts: max queue size only {max_burst_size}")
     else:
-        print(f"  [LOW] Low overlapping: jobs may not queue much")
+        avg_arrival_interval = sum(jobs[i]["arrival_time_ms"] - jobs[i-1]["arrival_time_ms"] 
+                                   for i in range(1, len(jobs))) / (len(jobs) - 1) if len(jobs) > 1 else 0
+        overlapping_ratio = avg_service_time / avg_arrival_interval if avg_arrival_interval > 0 else float('inf')
+        print(f"  Average arrival interval: {avg_arrival_interval:.1f} ms")
+        print(f"  Overlapping ratio: {overlapping_ratio:.2f}x (service_time / arrival_interval)")
+        if overlapping_ratio > 1.5:
+            print(f"  [OK] Good overlapping: jobs will queue up (ratio > 1.5)")
+        elif overlapping_ratio > 1.0:
+            print(f"  [WARN] Moderate overlapping: some queuing expected")
+        else:
+            print(f"  [LOW] Low overlapping: jobs may not queue much")
 
 def main():
     ap = argparse.ArgumentParser(description="Generate CSV dataset with overlapping jobs for FIFO testing")
     ap.add_argument("--output", "-o", required=True, help="Output CSV file path")
     ap.add_argument("--num-jobs", "-n", type=int, default=1000, help="Number of jobs to generate")
-    ap.add_argument("--arrival-interval-min", type=int, default=10, help="Minimum arrival interval (ms)")
-    ap.add_argument("--arrival-interval-max", type=int, default=50, help="Maximum arrival interval (ms)")
+    ap.add_argument("--arrival-interval-min", type=int, default=10, help="Minimum arrival interval (ms) - normal mode")
+    ap.add_argument("--arrival-interval-max", type=int, default=50, help="Maximum arrival interval (ms) - normal mode")
     ap.add_argument("--service-time-min", type=int, default=100, help="Minimum service time (ms)")
     ap.add_argument("--service-time-max", type=int, default=500, help="Maximum service time (ms)")
     ap.add_argument("--job-prefix", default="F", help="Job ID prefix (e.g., 'F' for FIFO)")
     ap.add_argument("--seed", type=int, help="Random seed for reproducibility")
+    
+    # Burst mode arguments
+    ap.add_argument("--burst", action="store_true", help="Enable burst mode (multiple jobs at same arrival time)")
+    ap.add_argument("--burst-size-min", type=int, default=5, help="Minimum jobs per burst")
+    ap.add_argument("--burst-size-max", type=int, default=30, help="Maximum jobs per burst")
+    ap.add_argument("--burst-interval-min", type=int, default=1000, help="Minimum time between bursts (ms)")
+    ap.add_argument("--burst-interval-max", type=int, default=5000, help="Maximum time between bursts (ms)")
     
     args = ap.parse_args()
     
@@ -114,6 +188,11 @@ def main():
         service_time_min=args.service_time_min,
         service_time_max=args.service_time_max,
         job_id_prefix=args.job_prefix,
+        burst_mode=args.burst,
+        burst_size_min=args.burst_size_min,
+        burst_size_max=args.burst_size_max,
+        burst_interval_min=args.burst_interval_min,
+        burst_interval_max=args.burst_interval_max,
     )
 
 if __name__ == "__main__":

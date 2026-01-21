@@ -47,30 +47,34 @@ for replicas in "${REPLICAS[@]}"; do
     
     # Rulează experimentul
     echo "Starting run..."
-    python submit_runs.py --scheduler "$SCHEDULER_URL" --dataset "$DATASET" > "$RESULTS_DIR/${config_name}.log" 2>&1
+    python submit_runs.py --scheduler "$SCHEDULER_URL" --dataset "$DATASET" --replicas "$replicas" --cores "$cores" > "$RESULTS_DIR/${config_name}.log" 2>&1
     
-    # Extrage run_id din log
+    # Extrage run_id din log (pentru logging, dar nu mai folosim pentru numele fișierelor)
     run_id=$(grep "Started run_id=" "$RESULTS_DIR/${config_name}.log" | sed 's/.*run_id=\([a-f0-9]*\).*/\1/' | head -1)
     
     if [ ! -z "$run_id" ]; then
       echo "Run ID: $run_id"
+    fi
+    
+    # Găsește scheduler pod
+    scheduler_pod=$(kubectl get pods -l app=scheduler-fifo -o jsonpath='{.items[0].metadata.name}')
+    
+    if [ ! -z "$scheduler_pod" ]; then
+      # Construiește numele fișierelor bazat pe dataset (fără extensie)
+      dataset_name=$(basename "$DATASET" .csv)
+      results_subdir="replicas_${replicas}_cores_${cores}"
+      jobs_file="results_jobs_${dataset_name}.csv"
+      run_file="results_run_${dataset_name}.csv"
       
-      # Găsește scheduler pod
-      scheduler_pod=$(kubectl get pods -l app=scheduler-fifo -o jsonpath='{.items[0].metadata.name}')
+      # Copiază rezultatele din folderul structurat
+      echo "Copying results..."
+      mkdir -p "$RESULTS_DIR/$config_name"
+      kubectl cp "$scheduler_pod:/results/${results_subdir}/${jobs_file}" "$RESULTS_DIR/$config_name/results_jobs.csv" 2>/dev/null || echo "Warning: Could not copy jobs CSV"
+      kubectl cp "$scheduler_pod:/results/${results_subdir}/${run_file}" "$RESULTS_DIR/$config_name/results_run.csv" 2>/dev/null || echo "Warning: Could not copy run CSV"
       
-      if [ ! -z "$scheduler_pod" ]; then
-        # Copiază rezultatele
-        echo "Copying results..."
-        mkdir -p "$RESULTS_DIR/$config_name"
-        kubectl cp "$scheduler_pod:/results/results_jobs_${run_id}.csv" "$RESULTS_DIR/$config_name/results_jobs.csv" 2>/dev/null || echo "Warning: Could not copy jobs CSV"
-        kubectl cp "$scheduler_pod:/results/results_run_${run_id}.csv" "$RESULTS_DIR/$config_name/results_run.csv" 2>/dev/null || echo "Warning: Could not copy run CSV"
-        
-        echo "Results saved to: $RESULTS_DIR/$config_name/"
-      else
-        echo "Warning: Could not find scheduler pod"
-      fi
+      echo "Results saved to: $RESULTS_DIR/$config_name/"
     else
-      echo "Warning: Could not extract run_id from log"
+      echo "Warning: Could not find scheduler pod"
     fi
     
     echo "Done: $config_name"
