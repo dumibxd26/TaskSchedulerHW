@@ -1,3 +1,5 @@
+Link cod sursa: https://github.com/dumibxd26/TaskSchedulerHW
+
 # Evaluarea Algoritmilor de Schedulare în Sisteme Distribuite: FIFO, Round-Robin și Priority Queue
 
 ## Abstract
