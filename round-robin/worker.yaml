@@ -25,7 +25,7 @@ spec:
             fieldRef:
               fieldPath: metadata.name
         - name: CORES
-          value: "2"
+          value: "4"
         - name: SPEEDUP
           value: "20000"
         - name: HEARTBEAT_SEC

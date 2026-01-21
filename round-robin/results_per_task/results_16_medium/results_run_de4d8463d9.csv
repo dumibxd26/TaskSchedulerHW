@@ -1,0 +1,2 @@
+run_id,dataset_file,quantum_ms,speedup,jobs,mean_response_ms,p50_response_ms,p95_response_ms,p99_response_ms,mean_wait_ms,avg_slices_per_job,total_slots_at_end
+de4d8463d9,dataset_rr_batch_mediumq_opt_1k.csv,50,20000.0,1000,50666860.0,50640000.0,78100000.0,79562200.0,50666744.878,2.838,32

@@ -1,0 +1,2594 @@
+[
+  {
+    "id": "0048287ba9",
+    "total_time_to_run": {
+      "sim_makespan_ms": 14738000.0,
+      "estimated_wall_seconds": 7.369
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 14738000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 7.369,
+      "waiting_p50_ms": 4106994.0,
+      "waiting_p95_ms": 13818701.25,
+      "waiting_p99_ms": 14681757.65,
+      "waiting_max_ms": 14737616.0,
+      "waiting_cv": 0.7576711382845196,
+      "waiting_gini": 0.4081046268822961,
+      "slowdown_p50": 212100.0,
+      "slowdown_p95": 1253383.333333333,
+      "slowdown_p99": 2246389.9999999995,
+      "slowdown_max": 2786000.0,
+      "slowdown_cv": 1.1418730448237375,
+      "slowdown_gini": 0.5199584494740677,
+      "slowdown_jain": 0.43405150545670246
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_0048287ba9.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_small\\results_run_0048287ba9.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "small",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 20
+  },
+  {
+    "id": "009e310875",
+    "total_time_to_run": {
+      "sim_makespan_ms": 241764000.0,
+      "estimated_wall_seconds": 120.882
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 241764000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 120.882,
+      "waiting_p50_ms": 208335441.5,
+      "waiting_p95_ms": 241247438.9,
+      "waiting_p99_ms": 241715129.94,
+      "waiting_max_ms": 241763100.0,
+      "waiting_cv": 0.27248687152718265,
+      "waiting_gini": 0.13413142342516648,
+      "slowdown_p50": 371786.0283310923,
+      "slowdown_p95": 425755.90984687733,
+      "slowdown_p99": 527450.3619047619,
+      "slowdown_max": 687857.1428571428,
+      "slowdown_cv": 0.15033101908493723,
+      "slowdown_gini": 0.08081837536943492,
+      "slowdown_jain": 0.9779000310766798
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_jobs_009e310875.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_run_009e310875.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large"
+    },
+    "dataset": "large",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "04f543ac28",
+    "total_time_to_run": {
+      "sim_makespan_ms": 67000000.0,
+      "estimated_wall_seconds": 3.35
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 67000000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 3.35,
+      "waiting_p50_ms": 48199391.0,
+      "waiting_p95_ms": 65381381.6,
+      "waiting_p99_ms": 66620012.17,
+      "waiting_max_ms": 66999493.0,
+      "waiting_cv": 0.45656405221013285,
+      "waiting_gini": 0.25619268005562224,
+      "slowdown_p50": 77358.53729195286,
+      "slowdown_p95": 132022.66472971215,
+      "slowdown_p99": 1338658.4415584416,
+      "slowdown_max": 4027500.0,
+      "slowdown_cv": 2.1333390955478833,
+      "slowdown_gini": 0.4680442631248787,
+      "slowdown_jain": 0.1801433174501098
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_04f543ac28.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_run_04f543ac28.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "08a78e0c55",
+    "total_time_to_run": {
+      "sim_makespan_ms": 105174000.0,
+      "estimated_wall_seconds": 52.587
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 105174000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 52.587,
+      "waiting_p50_ms": 90644454.0,
+      "waiting_p95_ms": 104829534.25,
+      "waiting_p99_ms": 105117168.04,
+      "waiting_max_ms": 105173118.0,
+      "waiting_cv": 0.27859328964647606,
+      "waiting_gini": 0.1392928089667289,
+      "slowdown_p50": 160858.69173521345,
+      "slowdown_p95": 177982.33152212264,
+      "slowdown_p99": 236371.81818181815,
+      "slowdown_max": 374500.0,
+      "slowdown_cv": 0.15191283309556936,
+      "slowdown_gini": 0.07656282538628933,
+      "slowdown_jain": 0.9774430493689017
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_jobs_08a78e0c55.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_run_08a78e0c55.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large"
+    },
+    "dataset": "large",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 20
+  },
+  {
+    "id": "135267c06e",
+    "total_time_to_run": {
+      "sim_makespan_ms": 56440000.0,
+      "estimated_wall_seconds": 2.822
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 56440000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.822,
+      "waiting_p50_ms": 29589891.0,
+      "waiting_p95_ms": 53482729.65,
+      "waiting_p99_ms": 56140541.57,
+      "waiting_max_ms": 56439759.0,
+      "waiting_cv": 0.5357598386693856,
+      "waiting_gini": 0.30921614544524734,
+      "slowdown_p50": 250626.78062678062,
+      "slowdown_p95": 2501722.2222222197,
+      "slowdown_p99": 4785403.571428569,
+      "slowdown_max": 8166666.666666667,
+      "slowdown_cv": 1.7372487058537018,
+      "slowdown_gini": 0.6177450833878073,
+      "slowdown_jain": 0.24887799168808497
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_135267c06e.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_run_135267c06e.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 200
+  },
+  {
+    "id": "1c334585e7",
+    "total_time_to_run": {
+      "sim_makespan_ms": 35880000.0,
+      "estimated_wall_seconds": 1.794
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 35880000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 1.794,
+      "waiting_p50_ms": 17189986.5,
+      "waiting_p95_ms": 33789925.44999999,
+      "waiting_p99_ms": 35480088.89,
+      "waiting_max_ms": 35879893.0,
+      "waiting_cv": 0.5687845987968589,
+      "waiting_gini": 0.3281638673144789,
+      "slowdown_p50": 165000.73313782993,
+      "slowdown_p95": 1804801.169590643,
+      "slowdown_p99": 3415292.857142856,
+      "slowdown_max": 5976666.666666667,
+      "slowdown_cv": 1.831217538146242,
+      "slowdown_gini": 0.6549245769692993,
+      "slowdown_jain": 0.22970775096852558
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_1c334585e7.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_medium\\results_run_1c334585e7.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "1d0ee832e5",
+    "total_time_to_run": {
+      "sim_makespan_ms": 56854000.0,
+      "estimated_wall_seconds": 28.427
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 56854000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 28.427,
+      "waiting_p50_ms": 39962894.0,
+      "waiting_p95_ms": 56030334.85,
+      "waiting_p99_ms": 56803762.07,
+      "waiting_max_ms": 56853682.0,
+      "waiting_cv": 0.4298501316161532,
+      "waiting_gini": 0.23455271386713172,
+      "slowdown_p50": 356057.14285714284,
+      "slowdown_p95": 472837.25490196067,
+      "slowdown_p99": 644378.5714285715,
+      "slowdown_max": 813090.9090909091,
+      "slowdown_cv": 0.2567722792053071,
+      "slowdown_gini": 0.1306841127133993,
+      "slowdown_jain": 0.938146145195053
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_1d0ee832e5.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_medium\\results_run_1d0ee832e5.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "medium",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "20caebd58f",
+    "total_time_to_run": {
+      "sim_makespan_ms": 37840000.0,
+      "estimated_wall_seconds": 1.892
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 37840000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 1.892,
+      "waiting_p50_ms": 20009986.5,
+      "waiting_p95_ms": 35999696.55,
+      "waiting_p99_ms": 37560141.91,
+      "waiting_max_ms": 37839792.0,
+      "waiting_cv": 0.4998312385977557,
+      "waiting_gini": 0.2885006782125077,
+      "slowdown_p50": 1268901.098901099,
+      "slowdown_p95": 7880333.333333333,
+      "slowdown_p99": 14173099.999999996,
+      "slowdown_max": 17110000.0,
+      "slowdown_cv": 1.2289976464398813,
+      "slowdown_gini": 0.5731489071862745,
+      "slowdown_jain": 0.398337305835641
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_20caebd58f.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_small\\results_run_20caebd58f.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "23640fdd54",
+    "total_time_to_run": {
+      "sim_makespan_ms": 62300000.0,
+      "estimated_wall_seconds": 3.115
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 62300000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 3.115,
+      "waiting_p50_ms": 41619872.0,
+      "waiting_p95_ms": 60321777.5,
+      "waiting_p99_ms": 61900088.95,
+      "waiting_max_ms": 62299682.0,
+      "waiting_cv": 0.46968239260953737,
+      "waiting_gini": 0.26687085477467765,
+      "slowdown_p50": 346708.31861533027,
+      "slowdown_p95": 1996436.507936506,
+      "slowdown_p99": 3963903.5714285704,
+      "slowdown_max": 6473333.333333333,
+      "slowdown_cv": 1.3663089663032357,
+      "slowdown_gini": 0.4785177722412346,
+      "slowdown_jain": 0.3488209617815867
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_23640fdd54.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_medium\\results_run_23640fdd54.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "32f4129e6d",
+    "total_time_to_run": {
+      "sim_makespan_ms": 5882000.0,
+      "estimated_wall_seconds": 2.941
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 5882000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 2.941,
+      "waiting_p50_ms": 4182365.0,
+      "waiting_p95_ms": 5734547.049999999,
+      "waiting_p99_ms": 5869491.2,
+      "waiting_max_ms": 5881266.0,
+      "waiting_cv": 0.4308283324041436,
+      "waiting_gini": 0.2412130106121093,
+      "slowdown_p50": 6882.173979720708,
+      "slowdown_p95": 11598.190601046428,
+      "slowdown_p99": 122582.987012987,
+      "slowdown_max": 367250.0,
+      "slowdown_cv": 2.170032947501139,
+      "slowdown_gini": 0.470310501111614,
+      "slowdown_jain": 0.17516070577573203
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_jobs_32f4129e6d.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_run_32f4129e6d.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large"
+    },
+    "dataset": "large",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "3a358cb874",
+    "total_time_to_run": {
+      "sim_makespan_ms": 5060000.0,
+      "estimated_wall_seconds": 2.53
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 5060000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 2.53,
+      "waiting_p50_ms": 2770992.0,
+      "waiting_p95_ms": 4848187.1,
+      "waiting_p99_ms": 5020008.04,
+      "waiting_max_ms": 5059995.0,
+      "waiting_cv": 0.5294713481916278,
+      "waiting_gini": 0.30552305658237655,
+      "slowdown_p50": 177715.38461538462,
+      "slowdown_p95": 1175658.3333333333,
+      "slowdown_p99": 2096449.9999999995,
+      "slowdown_max": 2504000.0,
+      "slowdown_cv": 1.2698083556923205,
+      "slowdown_gini": 0.5920863073865497,
+      "slowdown_jain": 0.38278782887849394
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_3a358cb874.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_small\\results_run_3a358cb874.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "small",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "409344e8d1",
+    "total_time_to_run": {
+      "sim_makespan_ms": 392860000.0,
+      "estimated_wall_seconds": 19.643
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 392860000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 19.643,
+      "waiting_p50_ms": 332859409.5,
+      "waiting_p95_ms": 391359141.25,
+      "waiting_p99_ms": 392599335.72,
+      "waiting_max_ms": 392859124.0,
+      "waiting_cv": 0.2806038470751866,
+      "waiting_gini": 0.14022337784570627,
+      "slowdown_p50": 583740.7904595404,
+      "slowdown_p95": 689450.3038025827,
+      "slowdown_p99": 1057357.1428571427,
+      "slowdown_max": 3167500.0,
+      "slowdown_cv": 0.25616395276666526,
+      "slowdown_gini": 0.09745256266843438,
+      "slowdown_jain": 0.9384208512401293
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_409344e8d1.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_run_409344e8d1.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "4dc9196f9f",
+    "total_time_to_run": {
+      "sim_makespan_ms": 137226000.0,
+      "estimated_wall_seconds": 68.613
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 137226000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 68.613,
+      "waiting_p50_ms": 115781454.0,
+      "waiting_p95_ms": 136885625.7,
+      "waiting_p99_ms": 137181164.0,
+      "waiting_max_ms": 137225100.0,
+      "waiting_cv": 0.27521603681759843,
+      "waiting_gini": 0.13776364044890088,
+      "slowdown_p50": 205980.44755877036,
+      "slowdown_p95": 236705.95865193993,
+      "slowdown_p99": 309851.90909090894,
+      "slowdown_max": 457000.0,
+      "slowdown_cv": 0.15550237646363174,
+      "slowdown_gini": 0.07971542852576063,
+      "slowdown_jain": 0.9763899258592756
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_4dc9196f9f.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_run_4dc9196f9f.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "large",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 20
+  },
+  {
+    "id": "5d70d21745",
+    "total_time_to_run": {
+      "sim_makespan_ms": 45720000.0,
+      "estimated_wall_seconds": 2.286
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 45720000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.286,
+      "waiting_p50_ms": 26439891.0,
+      "waiting_p95_ms": 44020780.0,
+      "waiting_p99_ms": 45399933.65,
+      "waiting_max_ms": 45719759.0,
+      "waiting_cv": 0.47837150990997185,
+      "waiting_gini": 0.2757699540393346,
+      "slowdown_p50": 217507.9365079365,
+      "slowdown_p95": 2275901.9607843114,
+      "slowdown_p99": 4240350.0,
+      "slowdown_max": 6850000.0,
+      "slowdown_cv": 1.6967976158568172,
+      "slowdown_gini": 0.608966086182462,
+      "slowdown_jain": 0.25779028386926767
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_5d70d21745.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_medium\\results_run_5d70d21745.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "5e921d9682",
+    "total_time_to_run": {
+      "sim_makespan_ms": 59820000.0,
+      "estimated_wall_seconds": 2.991
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 59820000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.991,
+      "waiting_p50_ms": 21859994.5,
+      "waiting_p95_ms": 55780705.0,
+      "waiting_p99_ms": 58940424.16,
+      "waiting_max_ms": 59819627.0,
+      "waiting_cv": 0.6461182921430241,
+      "waiting_gini": 0.3647919127455257,
+      "slowdown_p50": 1158461.5384615385,
+      "slowdown_p95": 8043249.999999997,
+      "slowdown_p99": 14343899.999999996,
+      "slowdown_max": 17850000.0,
+      "slowdown_cv": 1.256012940211065,
+      "slowdown_gini": 0.5752412362525259,
+      "slowdown_jain": 0.3879625304549222
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_5e921d9682.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_small\\results_run_5e921d9682.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "small",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "5f5da741ae",
+    "total_time_to_run": {
+      "sim_makespan_ms": 36880000.0,
+      "estimated_wall_seconds": 1.844
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 36880000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 1.844,
+      "waiting_p50_ms": 19529997.0,
+      "waiting_p95_ms": 35239990.15,
+      "waiting_p99_ms": 36540391.96,
+      "waiting_max_ms": 36879989.0,
+      "waiting_cv": 0.5575108718497003,
+      "waiting_gini": 0.3216922236905224,
+      "slowdown_p50": 1206111.111111111,
+      "slowdown_p95": 8422333.333333332,
+      "slowdown_p99": 15112899.999999998,
+      "slowdown_max": 18240000.0,
+      "slowdown_cv": 1.293794337490713,
+      "slowdown_gini": 0.5997080194291926,
+      "slowdown_jain": 0.37398503438732617
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_5f5da741ae.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_5f5da741ae.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 500
+  },
+  {
+    "id": "662e154c4b",
+    "total_time_to_run": {
+      "sim_makespan_ms": 970820000.0,
+      "estimated_wall_seconds": 48.541
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 970820000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 48.541,
+      "waiting_p50_ms": 837359432.0,
+      "waiting_p95_ms": 968219134.05,
+      "waiting_p99_ms": 970379506.93,
+      "waiting_max_ms": 970819100.0,
+      "waiting_cv": 0.26970187189356387,
+      "waiting_gini": 0.13254334568191695,
+      "slowdown_p50": 1481646.1293941662,
+      "slowdown_p95": 1701368.7594173783,
+      "slowdown_p99": 2248133.6363636362,
+      "slowdown_max": 3467500.0,
+      "slowdown_cv": 0.1639690976968362,
+      "slowdown_gini": 0.08468870050078947,
+      "slowdown_jain": 0.97381805912819
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_662e154c4b.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_662e154c4b.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 20
+  },
+  {
+    "id": "6eb06210be",
+    "total_time_to_run": {
+      "sim_makespan_ms": 118580000.0,
+      "estimated_wall_seconds": 5.929
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 118580000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 5.929,
+      "waiting_p50_ms": 43049994.0,
+      "waiting_p95_ms": 111488701.24999999,
+      "waiting_p99_ms": 118240824.78,
+      "waiting_max_ms": 118579616.0,
+      "waiting_cv": 0.721775041381745,
+      "waiting_gini": 0.40133825435559634,
+      "slowdown_p50": 1673192.9604022629,
+      "slowdown_p95": 13117666.666666664,
+      "slowdown_p99": 22983099.999999996,
+      "slowdown_max": 26410000.0,
+      "slowdown_cv": 1.2749566165060675,
+      "slowdown_gini": 0.5778938752918348,
+      "slowdown_jain": 0.3808777472000372
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_6eb06210be.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_small\\results_run_6eb06210be.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 20
+  },
+  {
+    "id": "6f29bdb41a",
+    "total_time_to_run": {
+      "sim_makespan_ms": 16012000.0,
+      "estimated_wall_seconds": 8.006
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 16012000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 8.006,
+      "waiting_p50_ms": 12849432.0,
+      "waiting_p95_ms": 15797649.7,
+      "waiting_p99_ms": 15959253.1,
+      "waiting_max_ms": 16011154.0,
+      "waiting_cv": 0.2939424910314638,
+      "waiting_gini": 0.15941173432622602,
+      "slowdown_p50": 21452.850840453455,
+      "slowdown_p95": 31502.697085746306,
+      "slowdown_p99": 165793.3116883117,
+      "slowdown_max": 495500.0,
+      "slowdown_cv": 1.069335454407788,
+      "slowdown_gini": 0.23120404616286683,
+      "slowdown_jain": 0.4665314285867022
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_6f29bdb41a.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_run_6f29bdb41a.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "large",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "6f4082d7d2",
+    "total_time_to_run": {
+      "sim_makespan_ms": 58480000.0,
+      "estimated_wall_seconds": 2.924
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 58480000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.924,
+      "waiting_p50_ms": 22629998.0,
+      "waiting_p95_ms": 55642742.949999996,
+      "waiting_p99_ms": 58260038.03,
+      "waiting_max_ms": 58479627.0,
+      "waiting_cv": 0.6527914332767706,
+      "waiting_gini": 0.3699353406685224,
+      "slowdown_p50": 1138666.6666666665,
+      "slowdown_p95": 8080249.999999995,
+      "slowdown_p99": 14444199.999999996,
+      "slowdown_max": 17850000.0,
+      "slowdown_cv": 1.2688340521375658,
+      "slowdown_gini": 0.5812603832461234,
+      "slowdown_jain": 0.38315059225823556
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_6f4082d7d2.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_6f4082d7d2.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 50
+  },
+  {
+    "id": "70201a640a",
+    "total_time_to_run": {
+      "sim_makespan_ms": 15678000.0,
+      "estimated_wall_seconds": 7.839
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 15678000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 7.839,
+      "waiting_p50_ms": 11056883.0,
+      "waiting_p95_ms": 15380037.35,
+      "waiting_p99_ms": 15595768.959999999,
+      "waiting_max_ms": 15677682.0,
+      "waiting_cv": 0.3880732320565614,
+      "waiting_gini": 0.21820762325543375,
+      "slowdown_p50": 94998.0,
+      "slowdown_p95": 301153.47222222196,
+      "slowdown_p99": 573006.0714285712,
+      "slowdown_max": 966333.3333333334,
+      "slowdown_cv": 0.8095095957302004,
+      "slowdown_gini": 0.29434847551413146,
+      "slowdown_jain": 0.6041179875717348
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_70201a640a.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_medium\\results_run_70201a640a.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "medium",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "711ac65959",
+    "total_time_to_run": {
+      "sim_makespan_ms": 122460000.0,
+      "estimated_wall_seconds": 6.123
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 122460000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 6.123,
+      "waiting_p50_ms": 94139503.5,
+      "waiting_p95_ms": 120261126.3,
+      "waiting_p99_ms": 122019173.1,
+      "waiting_max_ms": 122459124.0,
+      "waiting_cv": 0.2915879131613982,
+      "waiting_gini": 0.158759360401856,
+      "slowdown_p50": 161045.9091844081,
+      "slowdown_p95": 232569.73397020204,
+      "slowdown_p99": 1231500.9523809522,
+      "slowdown_max": 3690000.0,
+      "slowdown_cv": 1.0639017868738023,
+      "slowdown_gini": 0.23183594298733357,
+      "slowdown_jain": 0.4690680107895272
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_711ac65959.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_run_711ac65959.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "79a4c9c979",
+    "total_time_to_run": {
+      "sim_makespan_ms": 81520000.0,
+      "estimated_wall_seconds": 4.076
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 81520000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 4.076,
+      "waiting_p50_ms": 53099874.0,
+      "waiting_p95_ms": 79159741.4,
+      "waiting_p99_ms": 81139885.12,
+      "waiting_max_ms": 81519682.0,
+      "waiting_cv": 0.4643045567275537,
+      "waiting_gini": 0.2655946367871642,
+      "slowdown_p50": 447892.6174496644,
+      "slowdown_p95": 2620555.555555555,
+      "slowdown_p99": 4952989.2857142845,
+      "slowdown_max": 8136666.666666667,
+      "slowdown_cv": 1.333251430016244,
+      "slowdown_gini": 0.47177406839218805,
+      "slowdown_jain": 0.36002830714265194
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_79a4c9c979.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_run_79a4c9c979.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 100
+  },
+  {
+    "id": "7a04bacfea",
+    "total_time_to_run": {
+      "sim_makespan_ms": 40940000.0,
+      "estimated_wall_seconds": 2.047
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 40940000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.047,
+      "waiting_p50_ms": 24059993.0,
+      "waiting_p95_ms": 39400994.75,
+      "waiting_p99_ms": 40760191.96,
+      "waiting_max_ms": 40939995.0,
+      "waiting_cv": 0.48564767005303827,
+      "waiting_gini": 0.27945712442917925,
+      "slowdown_p50": 1616230.7692307692,
+      "slowdown_p95": 9858416.666666662,
+      "slowdown_p99": 17432599.999999996,
+      "slowdown_max": 20240000.0,
+      "slowdown_cv": 1.233517499963456,
+      "slowdown_gini": 0.5812636183718918,
+      "slowdown_jain": 0.39657904212647943
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_7a04bacfea.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_small\\results_run_7a04bacfea.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "small",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "7dd3136949",
+    "total_time_to_run": {
+      "sim_makespan_ms": 48440000.0,
+      "estimated_wall_seconds": 2.422
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 48440000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.422,
+      "waiting_p50_ms": 23899956.5,
+      "waiting_p95_ms": 45619732.3,
+      "waiting_p99_ms": 47539865.72,
+      "waiting_max_ms": 48439684.0,
+      "waiting_cv": 0.5119323396086851,
+      "waiting_gini": 0.294552706960576,
+      "slowdown_p50": 1511555.5555555555,
+      "slowdown_p95": 9201749.999999994,
+      "slowdown_p99": 16284499.999999996,
+      "slowdown_max": 19430000.0,
+      "slowdown_cv": 1.2239876055955254,
+      "slowdown_gini": 0.572699986590768,
+      "slowdown_jain": 0.40029691484835733
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_7dd3136949.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_small\\results_run_7dd3136949.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "small",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "82efcd5aa0",
+    "total_time_to_run": {
+      "sim_makespan_ms": 27444000.0,
+      "estimated_wall_seconds": 13.722
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 27444000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 13.722,
+      "waiting_p50_ms": 20684891.5,
+      "waiting_p95_ms": 26417904.75,
+      "waiting_p99_ms": 27199964.99,
+      "waiting_max_ms": 27443777.0,
+      "waiting_cv": 0.4200460882712721,
+      "waiting_gini": 0.22412044398819564,
+      "slowdown_p50": 181719.80026886883,
+      "slowdown_p95": 258439.39714436798,
+      "slowdown_p99": 474745.71428571414,
+      "slowdown_max": 804333.3333333334,
+      "slowdown_cv": 0.38712353349097417,
+      "slowdown_gini": 0.1732897910597928,
+      "slowdown_jain": 0.869667588471917
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_82efcd5aa0.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_medium\\results_run_82efcd5aa0.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "medium",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 20
+  },
+  {
+    "id": "841ffe4172",
+    "total_time_to_run": {
+      "sim_makespan_ms": 59320000.0,
+      "estimated_wall_seconds": 2.966
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 59320000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.966,
+      "waiting_p50_ms": 38539884.0,
+      "waiting_p95_ms": 56799741.0,
+      "waiting_p99_ms": 58220096.88,
+      "waiting_max_ms": 59319681.0,
+      "waiting_cv": 0.47302923823247145,
+      "waiting_gini": 0.2697714136164664,
+      "slowdown_p50": 321031.5789473684,
+      "slowdown_p95": 1852733.3333333326,
+      "slowdown_p99": 3547232.142857142,
+      "slowdown_max": 5976666.666666667,
+      "slowdown_cv": 1.3457575642624375,
+      "slowdown_gini": 0.4739102024691355,
+      "slowdown_jain": 0.3557372602324633
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_841ffe4172.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_run_841ffe4172.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "medium",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "8a2664fdbd",
+    "total_time_to_run": {
+      "sim_makespan_ms": 52380000.0,
+      "estimated_wall_seconds": 2.619
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 52380000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.619,
+      "waiting_p50_ms": 27629993.0,
+      "waiting_p95_ms": 50720787.0,
+      "waiting_p99_ms": 51959840.839999996,
+      "waiting_max_ms": 52379645.0,
+      "waiting_cv": 0.5132959583104494,
+      "waiting_gini": 0.2957974769107594,
+      "slowdown_p50": 1721538.4615384615,
+      "slowdown_p95": 10518416.666666655,
+      "slowdown_p99": 18613599.999999996,
+      "slowdown_max": 22160000.0,
+      "slowdown_cv": 1.2319499512180097,
+      "slowdown_gini": 0.577960982477667,
+      "slowdown_jain": 0.39718780196066134
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_8a2664fdbd.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_8a2664fdbd.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 100
+  },
+  {
+    "id": "8a41c5376b",
+    "total_time_to_run": {
+      "sim_makespan_ms": 280642000.0,
+      "estimated_wall_seconds": 140.321
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 280642000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 140.321,
+      "waiting_p50_ms": 240089443.0,
+      "waiting_p95_ms": 280106633.2,
+      "waiting_p99_ms": 280591204.98,
+      "waiting_max_ms": 280641100.0,
+      "waiting_cv": 0.2709873063472335,
+      "waiting_gini": 0.13401658752201362,
+      "slowdown_p50": 428811.9209670067,
+      "slowdown_p95": 488579.1444799432,
+      "slowdown_p99": 567536.1111111111,
+      "slowdown_max": 732636.3636363636,
+      "slowdown_cv": 0.1423953079763499,
+      "slowdown_gini": 0.07798553471874836,
+      "slowdown_jain": 0.9801265389829565
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_8a41c5376b.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_run_8a41c5376b.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "large",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "8ae67f0f6c",
+    "total_time_to_run": {
+      "sim_makespan_ms": 41800000.0,
+      "estimated_wall_seconds": 2.09
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 41800000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.09,
+      "waiting_p50_ms": 24229958.0,
+      "waiting_p95_ms": 39920915.949999996,
+      "waiting_p99_ms": 41420187.89,
+      "waiting_max_ms": 41799893.0,
+      "waiting_cv": 0.5460772609768112,
+      "waiting_gini": 0.3140089440725291,
+      "slowdown_p50": 216533.06043549947,
+      "slowdown_p95": 2248870.1298701297,
+      "slowdown_p99": 4385121.428571428,
+      "slowdown_max": 6963333.333333333,
+      "slowdown_cv": 1.8070678233695714,
+      "slowdown_gini": 0.6528365271650187,
+      "slowdown_jain": 0.23443942771358864
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_8ae67f0f6c.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_run_8ae67f0f6c.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "medium",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "8c10a11e9a",
+    "total_time_to_run": {
+      "sim_makespan_ms": 45900000.0,
+      "estimated_wall_seconds": 2.295
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 45900000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.295,
+      "waiting_p50_ms": 24849956.0,
+      "waiting_p95_ms": 43620721.449999996,
+      "waiting_p99_ms": 45460044.71,
+      "waiting_max_ms": 45899747.0,
+      "waiting_cv": 0.54608166210507,
+      "waiting_gini": 0.3147527249246205,
+      "slowdown_p50": 1440666.6666666665,
+      "slowdown_p95": 9766749.999999998,
+      "slowdown_p99": 17613099.999999996,
+      "slowdown_max": 20800000.0,
+      "slowdown_cv": 1.2747846215483196,
+      "slowdown_gini": 0.5907269123979588,
+      "slowdown_jain": 0.38094137626912944
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_8c10a11e9a.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_8c10a11e9a.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 200
+  },
+  {
+    "id": "8d9a200517",
+    "total_time_to_run": {
+      "sim_makespan_ms": 24908000.0,
+      "estimated_wall_seconds": 12.454
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 24908000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 12.454,
+      "waiting_p50_ms": 5694987.0,
+      "waiting_p95_ms": 22955907.45,
+      "waiting_p99_ms": 24644790.9,
+      "waiting_max_ms": 24907638.0,
+      "waiting_cv": 0.8422152061672111,
+      "waiting_gini": 0.44092313262825433,
+      "slowdown_p50": 375433.3333333334,
+      "slowdown_p95": 1193016.6666666667,
+      "slowdown_p99": 2140399.9999999995,
+      "slowdown_max": 2592000.0,
+      "slowdown_cv": 0.8727962545261092,
+      "slowdown_gini": 0.42005553773229276,
+      "slowdown_jain": 0.567609918321011
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_8d9a200517.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_small\\results_run_8d9a200517.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "small",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "917924fa53",
+    "total_time_to_run": {
+      "sim_makespan_ms": 4112000.0,
+      "estimated_wall_seconds": 2.056
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 4112000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 2.056,
+      "waiting_p50_ms": 2218886.5,
+      "waiting_p95_ms": 3883929.65,
+      "waiting_p99_ms": 4065801.57,
+      "waiting_max_ms": 4111759.0,
+      "waiting_cv": 0.47751423936629256,
+      "waiting_gini": 0.27478326553798427,
+      "slowdown_p50": 18067.05058717254,
+      "slowdown_p95": 194169.2307692306,
+      "slowdown_p99": 384030.0,
+      "slowdown_max": 576333.3333333334,
+      "slowdown_cv": 1.69279331370081,
+      "slowdown_gini": 0.6097184167000911,
+      "slowdown_jain": 0.25869545244622744
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_917924fa53.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_medium\\results_run_917924fa53.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "medium",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "95898f2200",
+    "total_time_to_run": {
+      "sim_makespan_ms": 33880000.0,
+      "estimated_wall_seconds": 1.694
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 33880000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 1.694,
+      "waiting_p50_ms": 17299992.0,
+      "waiting_p95_ms": 32420990.25,
+      "waiting_p99_ms": 33560593.94,
+      "waiting_max_ms": 33879989.0,
+      "waiting_cv": 0.5228281369755068,
+      "waiting_gini": 0.3017466375866218,
+      "slowdown_p50": 1156071.4285714286,
+      "slowdown_p95": 7658666.666666661,
+      "slowdown_p99": 13653899.999999996,
+      "slowdown_max": 16730000.0,
+      "slowdown_cv": 1.2637098535154274,
+      "slowdown_gini": 0.5874125044588498,
+      "slowdown_jain": 0.38506523057347325
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_95898f2200.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_small\\results_run_95898f2200.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "9a6142e2f7",
+    "total_time_to_run": {
+      "sim_makespan_ms": 3196000.0,
+      "estimated_wall_seconds": 1.598
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 3196000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 1.598,
+      "waiting_p50_ms": 1572990.0,
+      "waiting_p95_ms": 2961838.0,
+      "waiting_p99_ms": 3141907.8499999996,
+      "waiting_max_ms": 3195747.0,
+      "waiting_cv": 0.498180123527586,
+      "waiting_gini": 0.28647538091491787,
+      "slowdown_p50": 109555.55555555556,
+      "slowdown_p95": 633525.0,
+      "slowdown_p99": 1133589.9999999995,
+      "slowdown_max": 1366000.0,
+      "slowdown_cv": 1.217791520548133,
+      "slowdown_gini": 0.5686503781251786,
+      "slowdown_jain": 0.40273599706138635
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_9a6142e2f7.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_small\\results_run_9a6142e2f7.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "small",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "a0265907cd",
+    "total_time_to_run": {
+      "sim_makespan_ms": 221260000.0,
+      "estimated_wall_seconds": 11.063
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 221260000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 11.063,
+      "waiting_p50_ms": 158989890.0,
+      "waiting_p95_ms": 217964723.45,
+      "waiting_p99_ms": 220839684.1,
+      "waiting_max_ms": 221259689.0,
+      "waiting_cv": 0.4340534087541025,
+      "waiting_gini": 0.23620697430826376,
+      "slowdown_p50": 1385407.8014184397,
+      "slowdown_p95": 1951473.5883424403,
+      "slowdown_p99": 3452964.285714284,
+      "slowdown_max": 5906666.666666667,
+      "slowdown_cv": 0.365279755076313,
+      "slowdown_gini": 0.1624456029548058,
+      "slowdown_jain": 0.882278233383267
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_a0265907cd.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_run_a0265907cd.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "medium",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 20
+  },
+  {
+    "id": "a264f40649",
+    "total_time_to_run": {
+      "sim_makespan_ms": 133520000.0,
+      "estimated_wall_seconds": 6.676
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 133520000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 6.676,
+      "waiting_p50_ms": 29739988.5,
+      "waiting_p95_ms": 119561701.24999999,
+      "waiting_p99_ms": 132283228.1,
+      "waiting_max_ms": 133519616.0,
+      "waiting_cv": 0.8327191587294958,
+      "waiting_gini": 0.4259294506803488,
+      "slowdown_p50": 1572333.3333333335,
+      "slowdown_p95": 9162749.999999998,
+      "slowdown_p99": 16193099.999999996,
+      "slowdown_max": 19560000.0,
+      "slowdown_cv": 1.1190539161372572,
+      "slowdown_gini": 0.5100307093714866,
+      "slowdown_jain": 0.44399420132622996
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_a264f40649.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_a264f40649.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 20
+  },
+  {
+    "id": "a356155b26",
+    "total_time_to_run": {
+      "sim_makespan_ms": 975160000.0,
+      "estimated_wall_seconds": 48.758
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 975160000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 48.758,
+      "waiting_p50_ms": 828099454.0,
+      "waiting_p95_ms": 972340138.3,
+      "waiting_p99_ms": 974899303.96,
+      "waiting_max_ms": 975159114.0,
+      "waiting_cv": 0.27121888476709266,
+      "waiting_gini": 0.13450144524810503,
+      "slowdown_p50": 1473597.056857843,
+      "slowdown_p95": 1719344.2719881744,
+      "slowdown_p99": 2218191.428571428,
+      "slowdown_max": 3537500.0,
+      "slowdown_cv": 0.15938076336723225,
+      "slowdown_gini": 0.08259960909976805,
+      "slowdown_jain": 0.9752270601286692
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_a356155b26.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_run_a356155b26.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 20
+  },
+  {
+    "id": "a36d07c3a9",
+    "total_time_to_run": {
+      "sim_makespan_ms": 64440000.0,
+      "estimated_wall_seconds": 3.222
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 64440000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 3.222,
+      "waiting_p50_ms": 22779994.5,
+      "waiting_p95_ms": 61764742.49999999,
+      "waiting_p99_ms": 64179824.05,
+      "waiting_max_ms": 64439616.0,
+      "waiting_cv": 0.6578103178525139,
+      "waiting_gini": 0.36298573816287805,
+      "slowdown_p50": 1262727.2727272727,
+      "slowdown_p95": 8070749.999999999,
+      "slowdown_p99": 14273199.999999996,
+      "slowdown_max": 17340000.0,
+      "slowdown_cv": 1.2097317573637598,
+      "slowdown_gini": 0.5585797899040197,
+      "slowdown_jain": 0.405934613895982
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_a36d07c3a9.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_small\\results_run_a36d07c3a9.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "a513fcd2c0",
+    "total_time_to_run": {
+      "sim_makespan_ms": 9166000.0,
+      "estimated_wall_seconds": 4.583
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 9166000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 4.583,
+      "waiting_p50_ms": 6207855.5,
+      "waiting_p95_ms": 8901877.5,
+      "waiting_p99_ms": 9119768.959999999,
+      "waiting_max_ms": 9165682.0,
+      "waiting_cv": 0.43009084808328196,
+      "waiting_gini": 0.2445442352238143,
+      "slowdown_p50": 52179.48096046568,
+      "slowdown_p95": 332733.3333333333,
+      "slowdown_p99": 602502.8571428569,
+      "slowdown_max": 977000.0,
+      "slowdown_cv": 1.3635969194410598,
+      "slowdown_gini": 0.4818519417685847,
+      "slowdown_jain": 0.34972413915593514
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_a513fcd2c0.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_medium\\results_run_a513fcd2c0.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "medium",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "a5ea56a0de",
+    "total_time_to_run": {
+      "sim_makespan_ms": 6084000.0,
+      "estimated_wall_seconds": 3.042
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 6084000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 3.042,
+      "waiting_p50_ms": 2959956.5,
+      "waiting_p95_ms": 5847990.25,
+      "waiting_p99_ms": 6039658.03,
+      "waiting_max_ms": 6083627.0,
+      "waiting_cv": 0.5464549299288048,
+      "waiting_gini": 0.31453582430825455,
+      "slowdown_p50": 176824.17582417582,
+      "slowdown_p95": 1143724.9999999998,
+      "slowdown_p99": 2051379.9999999998,
+      "slowdown_max": 2501000.0,
+      "slowdown_cv": 1.2517791407205443,
+      "slowdown_gini": 0.5822501957768396,
+      "slowdown_jain": 0.3895672310541277
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_a5ea56a0de.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_small\\results_run_a5ea56a0de.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "small",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "b02f2b1e64",
+    "total_time_to_run": {
+      "sim_makespan_ms": 102940000.0,
+      "estimated_wall_seconds": 5.147
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 102940000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 5.147,
+      "waiting_p50_ms": 69749879.5,
+      "waiting_p95_ms": 100542700.05,
+      "waiting_p99_ms": 102580688.95,
+      "waiting_max_ms": 102939689.0,
+      "waiting_cv": 0.3942248011564276,
+      "waiting_gini": 0.22369743885468307,
+      "slowdown_p50": 598854.8387096773,
+      "slowdown_p95": 2087999.9999999995,
+      "slowdown_p99": 3996792.8571428545,
+      "slowdown_max": 6830000.0,
+      "slowdown_cv": 0.8934798948092568,
+      "slowdown_gini": 0.31153606683817237,
+      "slowdown_jain": 0.5560787878728248
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_b02f2b1e64.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_run_b02f2b1e64.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 50
+  },
+  {
+    "id": "b081315418",
+    "total_time_to_run": {
+      "sim_makespan_ms": 18238360000.0,
+      "estimated_wall_seconds": 911.918
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 18238360000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 911.918,
+      "waiting_p50_ms": 15542109440.0,
+      "waiting_p95_ms": 18205899138.0,
+      "waiting_p99_ms": 18236139507.0,
+      "waiting_max_ms": 18238359100.0,
+      "waiting_cv": 0.27331720506339396,
+      "waiting_gini": 0.1360052876733704,
+      "slowdown_p50": 27747446.42857143,
+      "slowdown_p95": 31360547.205212265,
+      "slowdown_p99": 33579261.9047619,
+      "slowdown_max": 35190000.0,
+      "slowdown_cv": 0.12727306931547477,
+      "slowdown_gini": 0.0726163477373376,
+      "slowdown_jain": 0.9840597725520366
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_b081315418.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_b081315418.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 1
+  },
+  {
+    "id": "b0d814f35d",
+    "total_time_to_run": {
+      "sim_makespan_ms": 7778000.0,
+      "estimated_wall_seconds": 3.889
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 7778000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 3.889,
+      "waiting_p50_ms": 3141994.5,
+      "waiting_p95_ms": 7274543.249999999,
+      "waiting_p99_ms": 7703629.11,
+      "waiting_max_ms": 7777616.0,
+      "waiting_cv": 0.6031925204399661,
+      "waiting_gini": 0.34198968605483326,
+      "slowdown_p50": 167371.79487179487,
+      "slowdown_p95": 1104091.666666666,
+      "slowdown_p99": 1978379.9999999998,
+      "slowdown_max": 2390000.0,
+      "slowdown_cv": 1.2292304482142586,
+      "slowdown_gini": 0.5669604459526818,
+      "slowdown_jain": 0.39824652139195155
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_b0d814f35d.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_small\\results_run_b0d814f35d.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "small",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "b203e54d69",
+    "total_time_to_run": {
+      "sim_makespan_ms": 388180000.0,
+      "estimated_wall_seconds": 19.409
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 388180000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 19.409,
+      "waiting_p50_ms": 297459886.5,
+      "waiting_p95_ms": 382463732.0,
+      "waiting_p99_ms": 387779893.88,
+      "waiting_max_ms": 388179680.0,
+      "waiting_cv": 0.4075365527082186,
+      "waiting_gini": 0.21674350945410636,
+      "slowdown_p50": 2602987.9430032885,
+      "slowdown_p95": 3766873.015873015,
+      "slowdown_p99": 5263539.999999999,
+      "slowdown_max": 6414545.454545454,
+      "slowdown_cv": 0.2949481047271067,
+      "slowdown_gini": 0.15250401345859665,
+      "slowdown_jain": 0.9199679540906186
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_b203e54d69.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_run_b203e54d69.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "medium",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "b519b06ad0",
+    "total_time_to_run": {
+      "sim_makespan_ms": 437560000.0,
+      "estimated_wall_seconds": 21.878
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 437560000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 21.878,
+      "waiting_p50_ms": 334329894.0,
+      "waiting_p95_ms": 432361732.15,
+      "waiting_p99_ms": 437280083.98,
+      "waiting_max_ms": 437559689.0,
+      "waiting_cv": 0.40384195460342803,
+      "waiting_gini": 0.21379417456437033,
+      "slowdown_p50": 2976241.844280122,
+      "slowdown_p95": 4336164.102564101,
+      "slowdown_p99": 6110267.53246753,
+      "slowdown_max": 8472727.272727273,
+      "slowdown_cv": 0.3020293631190568,
+      "slowdown_gini": 0.1535119852553537,
+      "slowdown_jain": 0.9164040330566273
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_b519b06ad0.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_medium\\results_run_b519b06ad0.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "b5491648a5",
+    "total_time_to_run": {
+      "sim_makespan_ms": 4313260000.0,
+      "estimated_wall_seconds": 215.663
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 4313260000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 215.663,
+      "waiting_p50_ms": 3112039893.0,
+      "waiting_p95_ms": 4253531734.9,
+      "waiting_p99_ms": 4310569084.99,
+      "waiting_max_ms": 4313259680.0,
+      "waiting_cv": 0.41598574283320083,
+      "waiting_gini": 0.22371567841093132,
+      "slowdown_p50": 28793779.220779218,
+      "slowdown_p95": 34151617.64705882,
+      "slowdown_p99": 35216889.47368421,
+      "slowdown_max": 38176000.0,
+      "slowdown_cv": 0.1923126980710036,
+      "slowdown_gini": 0.10447814870272154,
+      "slowdown_jain": 0.9643348714740573
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_b5491648a5.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_run_b5491648a5.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 1
+  },
+  {
+    "id": "b5ed15b5c2",
+    "total_time_to_run": {
+      "sim_makespan_ms": 101840000.0,
+      "estimated_wall_seconds": 5.092
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 101840000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 5.092,
+      "waiting_p50_ms": 75649516.0,
+      "waiting_p95_ms": 100159101.6,
+      "waiting_p99_ms": 101419393.06,
+      "waiting_max_ms": 101839124.0,
+      "waiting_cv": 0.3304304104582032,
+      "waiting_gini": 0.18379268654750058,
+      "slowdown_p50": 127844.22474077647,
+      "slowdown_p95": 190129.20382411903,
+      "slowdown_p99": 659825.7142857139,
+      "slowdown_max": 1802500.0,
+      "slowdown_cv": 0.7966229821790335,
+      "slowdown_gini": 0.19810571375069985,
+      "slowdown_jain": 0.6117674038610822
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_b5ed15b5c2.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_b5ed15b5c2.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 200
+  },
+  {
+    "id": "b7d564b23f",
+    "total_time_to_run": {
+      "sim_makespan_ms": 42776000.0,
+      "estimated_wall_seconds": 21.388
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 42776000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 21.388,
+      "waiting_p50_ms": 35653446.0,
+      "waiting_p95_ms": 42611243.65,
+      "waiting_p99_ms": 42735132.02,
+      "waiting_max_ms": 42775131.0,
+      "waiting_cv": 0.28447373105336726,
+      "waiting_gini": 0.14458542340601066,
+      "slowdown_p50": 62234.57494886066,
+      "slowdown_p95": 74509.84840501603,
+      "slowdown_p99": 116455.71428571429,
+      "slowdown_max": 342500.0,
+      "slowdown_cv": 0.25599067811265525,
+      "slowdown_gini": 0.09444272533725617,
+      "slowdown_jain": 0.9384990081916001
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_jobs_b7d564b23f.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_run_b7d564b23f.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large"
+    },
+    "dataset": "large",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "bbedee9d0c",
+    "total_time_to_run": {
+      "sim_makespan_ms": 203760000.0,
+      "estimated_wall_seconds": 10.188
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 203760000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 10.188,
+      "waiting_p50_ms": 170289455.0,
+      "waiting_p95_ms": 202280132.95,
+      "waiting_p99_ms": 203519382.9,
+      "waiting_max_ms": 203759124.0,
+      "waiting_cv": 0.27322876748278896,
+      "waiting_gini": 0.141143676645066,
+      "slowdown_p50": 293850.4330661193,
+      "slowdown_p95": 390418.26820960216,
+      "slowdown_p99": 1177184.7619047617,
+      "slowdown_max": 3592500.0,
+      "slowdown_cv": 0.5767064776599322,
+      "slowdown_gini": 0.14510125645486305,
+      "slowdown_jain": 0.7504181547345357
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_bbedee9d0c.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_run_bbedee9d0c.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "c2a994284e",
+    "total_time_to_run": {
+      "sim_makespan_ms": 9700000.0,
+      "estimated_wall_seconds": 4.85
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 9700000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 4.85,
+      "waiting_p50_ms": 6992437.0,
+      "waiting_p95_ms": 9531225.35,
+      "waiting_p99_ms": 9683193.1,
+      "waiting_max_ms": 9699130.0,
+      "waiting_cv": 0.3415944141540362,
+      "waiting_gini": 0.1935607264275312,
+      "slowdown_p50": 11732.519206388766,
+      "slowdown_p95": 18494.51371571072,
+      "slowdown_p99": 123718.96103896103,
+      "slowdown_max": 365500.0,
+      "slowdown_cv": 1.407017348593797,
+      "slowdown_gini": 0.29310551141316554,
+      "slowdown_jain": 0.33560450108116807
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_jobs_c2a994284e.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_run_c2a994284e.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large"
+    },
+    "dataset": "large",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "c46b7cdc07",
+    "total_time_to_run": {
+      "sim_makespan_ms": 53152000.0,
+      "estimated_wall_seconds": 26.576
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 53152000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 26.576,
+      "waiting_p50_ms": 44722409.5,
+      "waiting_p95_ms": 52925525.8,
+      "waiting_p99_ms": 53111128.04,
+      "waiting_max_ms": 53151130.0,
+      "waiting_cv": 0.2783925876888958,
+      "waiting_gini": 0.13896177273972588,
+      "slowdown_p50": 78746.24927264983,
+      "slowdown_p95": 94621.94242114914,
+      "slowdown_p99": 152881.90476190476,
+      "slowdown_max": 460750.0,
+      "slowdown_cv": 0.2715656418641184,
+      "slowdown_gini": 0.09965515596849461,
+      "slowdown_jain": 0.931317306427932
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_c46b7cdc07.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_run_c46b7cdc07.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "large",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "c4d33c0213",
+    "total_time_to_run": {
+      "sim_makespan_ms": 41260000.0,
+      "estimated_wall_seconds": 2.063
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 41260000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.063,
+      "waiting_p50_ms": 20389986.5,
+      "waiting_p95_ms": 39680724.449999996,
+      "waiting_p99_ms": 41139733.09,
+      "waiting_max_ms": 41259730.0,
+      "waiting_cv": 0.5216140336075796,
+      "waiting_gini": 0.3005599925201279,
+      "slowdown_p50": 1307333.3333333335,
+      "slowdown_p95": 8226999.9999999935,
+      "slowdown_p99": 14434199.999999996,
+      "slowdown_max": 18480000.0,
+      "slowdown_cv": 1.240148051448238,
+      "slowdown_gini": 0.5760420128343426,
+      "slowdown_jain": 0.3940161260290873
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_c4d33c0213.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_small\\results_run_c4d33c0213.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "small",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "cb135f4fcf",
+    "total_time_to_run": {
+      "sim_makespan_ms": 96640000.0,
+      "estimated_wall_seconds": 4.832
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 96640000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 4.832,
+      "waiting_p50_ms": 38219991.5,
+      "waiting_p95_ms": 89354697.34999998,
+      "waiting_p99_ms": 94979601.24,
+      "waiting_max_ms": 96639818.0,
+      "waiting_cv": 0.6252128288168675,
+      "waiting_gini": 0.3543679900816612,
+      "slowdown_p50": 1885714.2857142857,
+      "slowdown_p95": 11393999.999999996,
+      "slowdown_p99": 20622099.999999996,
+      "slowdown_max": 23850000.0,
+      "slowdown_cv": 1.1663324630326242,
+      "slowdown_gini": 0.5362770266940655,
+      "slowdown_jain": 0.423669317762526
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_cb135f4fcf.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_small\\results_run_cb135f4fcf.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "small",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 20
+  },
+  {
+    "id": "cd863ba337",
+    "total_time_to_run": {
+      "sim_makespan_ms": 45120000.0,
+      "estimated_wall_seconds": 2.256
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 45120000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.256,
+      "waiting_p50_ms": 20669898.5,
+      "waiting_p95_ms": 41059750.45,
+      "waiting_p99_ms": 44400288.89,
+      "waiting_max_ms": 45119893.0,
+      "waiting_cv": 0.5794319050686668,
+      "waiting_gini": 0.3340586199603426,
+      "slowdown_p50": 197448.5696895922,
+      "slowdown_p95": 2196991.228070175,
+      "slowdown_p99": 4032335.714285711,
+      "slowdown_max": 7516666.666666667,
+      "slowdown_cv": 1.8442715947470274,
+      "slowdown_gini": 0.6571504076482035,
+      "slowdown_jain": 0.22720365141457047
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_cd863ba337.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_run_cd863ba337.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 500
+  },
+  {
+    "id": "ced4df1c71",
+    "total_time_to_run": {
+      "sim_makespan_ms": 177340000.0,
+      "estimated_wall_seconds": 8.867
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 177340000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 8.867,
+      "waiting_p50_ms": 42759987.0,
+      "waiting_p95_ms": 166199710.95,
+      "waiting_p99_ms": 176720228.98,
+      "waiting_max_ms": 177339601.0,
+      "waiting_cv": 0.8024316854473214,
+      "waiting_gini": 0.4195558995229316,
+      "slowdown_p50": 2945571.4285714286,
+      "slowdown_p95": 9076749.999999994,
+      "slowdown_p99": 16262699.999999998,
+      "slowdown_max": 19750000.0,
+      "slowdown_cv": 0.8519893012566322,
+      "slowdown_gini": 0.4069016822749678,
+      "slowdown_jain": 0.5794126226067308
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_ced4df1c71.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_small\\results_run_ced4df1c71.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "d180f8a8e1",
+    "total_time_to_run": {
+      "sim_makespan_ms": 2151580000.0,
+      "estimated_wall_seconds": 107.579
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 2151580000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 107.579,
+      "waiting_p50_ms": 1833819443.0,
+      "waiting_p95_ms": 2147848138.55,
+      "waiting_p99_ms": 2151219105.02,
+      "waiting_max_ms": 2151579108.0,
+      "waiting_cv": 0.27430876471715665,
+      "waiting_gini": 0.13759440957239133,
+      "slowdown_p50": 3272896.89550732,
+      "slowdown_p95": 3702608.0258190227,
+      "slowdown_p99": 4880426.744186046,
+      "slowdown_max": 6575454.545454546,
+      "slowdown_cv": 0.15364054426872084,
+      "slowdown_gini": 0.0797488195606455,
+      "slowdown_jain": 0.9769389488813102
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_d180f8a8e1.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_run_d180f8a8e1.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "d2c05ddd60",
+    "total_time_to_run": {
+      "sim_makespan_ms": 178920000.0,
+      "estimated_wall_seconds": 8.946
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 178920000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 8.946,
+      "waiting_p50_ms": 45739988.5,
+      "waiting_p95_ms": 164720711.0,
+      "waiting_p99_ms": 177920026.88,
+      "waiting_max_ms": 178919601.0,
+      "waiting_cv": 0.7875166244148443,
+      "waiting_gini": 0.41778427537895824,
+      "slowdown_p50": 3029555.5555555555,
+      "slowdown_p95": 9707999.999999998,
+      "slowdown_p99": 17396899.999999993,
+      "slowdown_max": 21260000.0,
+      "slowdown_cv": 0.8875630691009779,
+      "slowdown_gini": 0.4221046967028146,
+      "slowdown_jain": 0.5593566319655756
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_d2c05ddd60.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_small\\results_run_d2c05ddd60.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "small",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 10
+  },
+  {
+    "id": "d518265761",
+    "total_time_to_run": {
+      "sim_makespan_ms": 244140000.0,
+      "estimated_wall_seconds": 12.207
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 244140000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 12.207,
+      "waiting_p50_ms": 173659890.0,
+      "waiting_p95_ms": 240299723.25,
+      "waiting_p99_ms": 243640696.88,
+      "waiting_max_ms": 244139682.0,
+      "waiting_cv": 0.4269073882108501,
+      "waiting_gini": 0.2325470032271113,
+      "slowdown_p50": 1526664.1667916605,
+      "slowdown_p95": 2284962.499999999,
+      "slowdown_p99": 4332914.2857142845,
+      "slowdown_max": 7103333.333333333,
+      "slowdown_cv": 0.4036798628092643,
+      "slowdown_gini": 0.1736266539901994,
+      "slowdown_jain": 0.8598767012407104
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_d518265761.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_run_d518265761.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 20
+  },
+  {
+    "id": "db4cdd4ea8",
+    "total_time_to_run": {
+      "sim_makespan_ms": 1747900000.0,
+      "estimated_wall_seconds": 87.395
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 1747900000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 87.395,
+      "waiting_p50_ms": 350279989.0,
+      "waiting_p95_ms": 1657652693.1,
+      "waiting_p99_ms": 1737119823.02,
+      "waiting_max_ms": 1747899601.0,
+      "waiting_cv": 0.8705647253796419,
+      "waiting_gini": 0.428549228373984,
+      "slowdown_p50": 30179166.666666664,
+      "slowdown_p95": 37428333.33333333,
+      "slowdown_p99": 39667800.0,
+      "slowdown_max": 41950000.0,
+      "slowdown_cv": 0.3812358054283821,
+      "slowdown_gini": 0.20543363922704283,
+      "slowdown_jain": 0.8731026197284311
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_db4cdd4ea8.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_db4cdd4ea8.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 1
+  },
+  {
+    "id": "de41758d24",
+    "total_time_to_run": {
+      "sim_makespan_ms": 5594000.0,
+      "estimated_wall_seconds": 2.797
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 5594000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 2.797,
+      "waiting_p50_ms": 3235926.5,
+      "waiting_p95_ms": 5327753.55,
+      "waiting_p99_ms": 5547948.89,
+      "waiting_max_ms": 5593893.0,
+      "waiting_cv": 0.5074310991906196,
+      "waiting_gini": 0.29216984662146794,
+      "slowdown_p50": 29145.021887978448,
+      "slowdown_p95": 306077.7777777773,
+      "slowdown_p99": 582503.5714285715,
+      "slowdown_max": 931666.6666666666,
+      "slowdown_cv": 1.772414324787377,
+      "slowdown_gini": 0.643894483977911,
+      "slowdown_jain": 0.24146117591658417
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_de41758d24.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_medium\\results_run_de41758d24.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "medium",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "de4d8463d9",
+    "total_time_to_run": {
+      "sim_makespan_ms": 79880000.0,
+      "estimated_wall_seconds": 3.994
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 79880000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 3.994,
+      "waiting_p50_ms": 50639898.0,
+      "waiting_p95_ms": 78099702.6,
+      "waiting_p99_ms": 79561880.05,
+      "waiting_max_ms": 79879680.0,
+      "waiting_cv": 0.3655757977455541,
+      "waiting_gini": 0.20617116654568757,
+      "slowdown_p50": 465970.02280873246,
+      "slowdown_p95": 1830185.7142857115,
+      "slowdown_p99": 3567107.142857142,
+      "slowdown_max": 5856666.666666667,
+      "slowdown_cv": 0.9721100078153816,
+      "slowdown_gini": 0.3411582958645416,
+      "slowdown_jain": 0.5141393812379027
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_de4d8463d9.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_run_de4d8463d9.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "medium",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "df7c3f071e",
+    "total_time_to_run": {
+      "sim_makespan_ms": 254340000.0,
+      "estimated_wall_seconds": 12.717
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 254340000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 12.717,
+      "waiting_p50_ms": 212459455.0,
+      "waiting_p95_ms": 252466149.45,
+      "waiting_p99_ms": 253859393.57,
+      "waiting_max_ms": 254339124.0,
+      "waiting_cv": 0.2754884812451808,
+      "waiting_gini": 0.14184659348070983,
+      "slowdown_p50": 366474.436827705,
+      "slowdown_p95": 481012.32523743523,
+      "slowdown_p99": 1401633.3333333326,
+      "slowdown_max": 4252500.0,
+      "slowdown_cv": 0.5564646440316916,
+      "slowdown_gini": 0.14142239559760417,
+      "slowdown_jain": 0.7635610931386744
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_df7c3f071e.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_df7c3f071e.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 100
+  },
+  {
+    "id": "e50e7f7503",
+    "total_time_to_run": {
+      "sim_makespan_ms": 39460000.0,
+      "estimated_wall_seconds": 1.973
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 39460000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 1.973,
+      "waiting_p50_ms": 22589891.0,
+      "waiting_p95_ms": 37860729.65,
+      "waiting_p99_ms": 39039745.53,
+      "waiting_max_ms": 39459759.0,
+      "waiting_cv": 0.4712787312907958,
+      "waiting_gini": 0.2718925924954567,
+      "slowdown_p50": 187632.87250384025,
+      "slowdown_p95": 1914354.166666664,
+      "slowdown_p99": 3689335.7142857136,
+      "slowdown_max": 5876666.666666667,
+      "slowdown_cv": 1.6890765682669708,
+      "slowdown_gini": 0.6061400100838423,
+      "slowdown_jain": 0.2595393928695628
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_jobs_e50e7f7503.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium\\results_run_e50e7f7503.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_medium"
+    },
+    "dataset": "medium",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 200
+  },
+  {
+    "id": "e535b84f38",
+    "total_time_to_run": {
+      "sim_makespan_ms": 7428000.0,
+      "estimated_wall_seconds": 3.714
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 7428000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 3.714,
+      "waiting_p50_ms": 5198208.0,
+      "waiting_p95_ms": 7173476.45,
+      "waiting_p99_ms": 7373290.79,
+      "waiting_max_ms": 7427266.0,
+      "waiting_cv": 0.4332794756546918,
+      "waiting_gini": 0.24342948795684327,
+      "slowdown_p50": 8471.538660637108,
+      "slowdown_p95": 14559.492848622278,
+      "slowdown_p99": 151435.1948051948,
+      "slowdown_max": 449750.0,
+      "slowdown_cv": 2.1543640664927954,
+      "slowdown_gini": 0.46958361930549586,
+      "slowdown_jain": 0.17726459186832674
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_e535b84f38.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_run_e535b84f38.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "large",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 500
+  },
+  {
+    "id": "e59e96bca8",
+    "total_time_to_run": {
+      "sim_makespan_ms": 455120000.0,
+      "estimated_wall_seconds": 22.756
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 455120000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 22.756,
+      "waiting_p50_ms": 378269431.0,
+      "waiting_p95_ms": 452380145.75,
+      "waiting_p99_ms": 454579512.19,
+      "waiting_max_ms": 455119124.0,
+      "waiting_cv": 0.28239539586451173,
+      "waiting_gini": 0.1430030567009528,
+      "slowdown_p50": 663124.1629780955,
+      "slowdown_p95": 787602.057821897,
+      "slowdown_p99": 1368594.8051948051,
+      "slowdown_max": 4035000.0,
+      "slowdown_cv": 0.283697606619417,
+      "slowdown_gini": 0.09860738420603998,
+      "slowdown_jain": 0.9255108754307533
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_e59e96bca8.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_e59e96bca8.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 50
+  },
+  {
+    "id": "e7163653b8",
+    "total_time_to_run": {
+      "sim_makespan_ms": 75620000.0,
+      "estimated_wall_seconds": 3.781
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 75620000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 3.781,
+      "waiting_p50_ms": 55619391.0,
+      "waiting_p95_ms": 73459213.05,
+      "waiting_p99_ms": 74939613.87,
+      "waiting_max_ms": 75619266.0,
+      "waiting_cv": 0.4137222199063913,
+      "waiting_gini": 0.2287648966659983,
+      "slowdown_p50": 90349.42779902229,
+      "slowdown_p95": 154002.81348742585,
+      "slowdown_p99": 1667898.5714285716,
+      "slowdown_max": 5115000.0,
+      "slowdown_cv": 2.2343037750666466,
+      "slowdown_gini": 0.47521644166133714,
+      "slowdown_jain": 0.16688602835788927
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large\\results_jobs_e7163653b8.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_medium\\results_run_e7163653b8.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_8_4_large"
+    },
+    "dataset": "large",
+    "machines": 8,
+    "cores": 4,
+    "quantum_ms": 500
+  },
+  {
+    "id": "ea3c0cd407",
+    "total_time_to_run": {
+      "sim_makespan_ms": 22544000.0,
+      "estimated_wall_seconds": 11.272
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 22544000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 11.272,
+      "waiting_p50_ms": 18791458.5,
+      "waiting_p95_ms": 22385296.85,
+      "waiting_p99_ms": 22503253.25,
+      "waiting_max_ms": 22543154.0,
+      "waiting_cv": 0.28111547283789223,
+      "waiting_gini": 0.14556275307040023,
+      "slowdown_p50": 32184.51022587447,
+      "slowdown_p95": 41854.629049111805,
+      "slowdown_p99": 121215.77922077921,
+      "slowdown_max": 366000.0,
+      "slowdown_cv": 0.5375638847110715,
+      "slowdown_gini": 0.1385053315225404,
+      "slowdown_jain": 0.7758102788601149
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_jobs_ea3c0cd407.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large\\results_run_ea3c0cd407.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_16_large"
+    },
+    "dataset": "large",
+    "machines": 16,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "f041e7f06f",
+    "total_time_to_run": {
+      "sim_makespan_ms": 26182000.0,
+      "estimated_wall_seconds": 13.091
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 26182000.0,
+      "speedup": 2000.0,
+      "estimated_wall_seconds": 13.091,
+      "waiting_p50_ms": 21431448.0,
+      "waiting_p95_ms": 25971439.6,
+      "waiting_p99_ms": 26145213.1,
+      "waiting_max_ms": 26181124.0,
+      "waiting_cv": 0.28485349523030656,
+      "waiting_gini": 0.1500346590365862,
+      "slowdown_p50": 36594.32257674643,
+      "slowdown_p95": 47981.311475409835,
+      "slowdown_p99": 154111.42857142855,
+      "slowdown_max": 460250.0,
+      "slowdown_cv": 0.596926317560241,
+      "slowdown_gini": 0.14340398721435577,
+      "slowdown_jain": 0.7372885761677909
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_jobs_f041e7f06f.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large\\results_run_f041e7f06f.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_2_large"
+    },
+    "dataset": "large",
+    "machines": 2,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "f0ff450112",
+    "total_time_to_run": {
+      "sim_makespan_ms": 102380000.0,
+      "estimated_wall_seconds": 5.119
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 102380000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 5.119,
+      "waiting_p50_ms": 72139868.0,
+      "waiting_p95_ms": 100582741.85,
+      "waiting_p99_ms": 102120288.96,
+      "waiting_max_ms": 102379682.0,
+      "waiting_cv": 0.3937742913359295,
+      "waiting_gini": 0.22197502774445033,
+      "slowdown_p50": 613941.9404125286,
+      "slowdown_p95": 1948333.3333333319,
+      "slowdown_p99": 3698746.4285714272,
+      "slowdown_max": 6180000.0,
+      "slowdown_cv": 0.8115439492852575,
+      "slowdown_gini": 0.29331740349269086,
+      "slowdown_jain": 0.602916821765429
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_f0ff450112.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_medium\\results_run_f0ff450112.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 50
+  },
+  {
+    "id": "f247c4154d",
+    "total_time_to_run": {
+      "sim_makespan_ms": 45020000.0,
+      "estimated_wall_seconds": 2.251
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 45020000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 2.251,
+      "waiting_p50_ms": 22249956.5,
+      "waiting_p95_ms": 43225788.099999994,
+      "waiting_p99_ms": 44639865.589999996,
+      "waiting_max_ms": 45019627.0,
+      "waiting_cv": 0.5209180576000456,
+      "waiting_gini": 0.29995192154935424,
+      "slowdown_p50": 1382857.1428571427,
+      "slowdown_p95": 8631583.333333328,
+      "slowdown_p99": 15672599.999999998,
+      "slowdown_max": 18610000.0,
+      "slowdown_cv": 1.2329487037132467,
+      "slowdown_gini": 0.5742947382143382,
+      "slowdown_jain": 0.39679980859325265
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_f247c4154d.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_small\\results_run_f247c4154d.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "small",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 100
+  },
+  {
+    "id": "f8292be8db",
+    "total_time_to_run": {
+      "sim_makespan_ms": 215900000.0,
+      "estimated_wall_seconds": 10.795
+    },
+    "fairness": {
+      "jobs": 1000,
+      "max_arrival_time_ms": 0.0,
+      "sim_makespan_ms": 215900000.0,
+      "speedup": 20000.0,
+      "estimated_wall_seconds": 10.795,
+      "waiting_p50_ms": 155949891.5,
+      "waiting_p95_ms": 212833728.2,
+      "waiting_p99_ms": 215579888.96,
+      "waiting_max_ms": 215899682.0,
+      "waiting_cv": 0.4267867288754424,
+      "waiting_gini": 0.23195596678405028,
+      "slowdown_p50": 1371537.5,
+      "slowdown_p95": 1974792.3497267745,
+      "slowdown_p99": 3740899.999999999,
+      "slowdown_max": 6196666.666666667,
+      "slowdown_cv": 0.38489564810758986,
+      "slowdown_gini": 0.16721019490128475,
+      "slowdown_jain": 0.8709703880511754
+    },
+    "sources": {
+      "jobs_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large\\results_jobs_f8292be8db.csv",
+      "run_csv": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_medium\\results_run_f8292be8db.csv",
+      "directory": "C:\\facultate\\TaskSchedulerHW\\round-robin\\results_per_task\\results_latest_8_large"
+    },
+    "dataset": "medium",
+    "machines": 8,
+    "cores": 2,
+    "quantum_ms": 20
+  }
+]
