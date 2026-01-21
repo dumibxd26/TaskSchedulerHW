@@ -15,7 +15,6 @@ def main():
 
     timeout = httpx.Timeout(3600.0, connect=30.0)
     with httpx.Client(timeout=timeout) as c:
-        # start run (RR-only)
         r = c.post(f"{args.scheduler}/start", json={
             "dataset_file": args.dataset,
             "quantum_ms": args.quantum,

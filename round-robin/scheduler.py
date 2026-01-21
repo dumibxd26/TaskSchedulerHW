@@ -28,9 +28,6 @@ app = FastAPI(title="Scheduler (RR only, long-poll)")
 
 # Instrumentator().instrument(app).expose(app, endpoint="/metrics")
 
-# ---------------------------
-# Worker registry
-# ---------------------------
 WORKERS: Dict[str, Dict[str, Any]] = {}
 REGISTRY_LOCK = threading.Lock()
 
@@ -88,9 +85,6 @@ def workers():
         alive.sort(key=lambda x: x["worker_id"])
     return {"worker_count": len(alive), "total_slots": total_slots, "workers": alive}
 
-# ---------------------------
-# RR run state
-# ---------------------------
 @dataclass
 class JobState:
     job_id: str
@@ -251,7 +245,6 @@ def finalize_run(run: RunState):
         jobs_df.insert(1, "quantum_ms", run.quantum_ms)
         jobs_df.to_csv(jobs_path, index=False)
     else:
-        # still create an empty jobs file with header if you want
         pd.DataFrame(columns=[
             "run_id","quantum_ms","job_id","service_time_ms","arrival_time_ms",
             "first_start_time_ms","finish_time_ms","response_time_ms",
@@ -280,7 +273,6 @@ def start(req: StartReq):
 
     jobs = load_jobs(dataset_path)
 
-    # Create pending list sorted by arrival_time (load_jobs already sorts, but this is safe)
     pending_ids = sorted(jobs.keys(), key=lambda jid: jobs[jid].arrival_ms)
 
     run = RunState(
@@ -290,8 +282,8 @@ def start(req: StartReq):
         speedup=float(req.speedup),
         start_wall_ms=int(time.time() * 1000),
         jobs=jobs,
-        ready_q=deque(),              # start empty
-        pending_ids=pending_ids,      # everything starts pending
+        ready_q=deque(),               
+        pending_ids=pending_ids,      
         total_jobs=len(jobs),
     )
 
@@ -300,7 +292,7 @@ def start(req: StartReq):
 
     with RUN_CV:
         ACTIVE_RUN = run
-        RUN_CV.notify_all()  # wake cores waiting in /next
+        RUN_CV.notify_all()   
 
     return {"run_id": run.run_id}
 
@@ -347,7 +339,6 @@ def next_slice(req: NextReq):
                     "arrival_time_ms": int(job.arrival_ms),
                 }
 
-            # Nothing runnable. Compute how long we can sleep.
             # 1) remaining time for request timeout
             remaining_req = deadline_wall - time.time()
             if remaining_req <= 0:
@@ -363,7 +354,6 @@ def next_slice(req: NextReq):
                 wait_until_arrival = max(0.001, (delta_sim / run.speedup) / 1000.0)
                 wait_time = min(remaining_req, wait_until_arrival)
             else:
-                # No pending arrivals; only /done can make work runnable
                 wait_time = remaining_req
 
             RUN_CV.wait(timeout=wait_time)
@@ -399,11 +389,11 @@ def done(req: DoneReq):
             run.completed += 1
         else:
             job.preemptions += 1
-            run.ready_q.append(job.job_id)  # RR: back to tail
-            RUN_CV.notify_all()  # wake waiting /next callers
+            run.ready_q.append(job.job_id)   
+            RUN_CV.notify_all() 
 
         if run.completed >= run.total_jobs:
             finalize_run(run)
-            RUN_CV.notify_all()  # wake everyone so they can see "done"
+            RUN_CV.notify_all()   
 
     return {"status": "ok"}

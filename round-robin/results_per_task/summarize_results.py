@@ -140,7 +140,6 @@ def pick_better(existing: Dict[str, Any], candidate: Dict[str, Any]) -> bool:
         return True
     if ex_has_speedup and not ca_has_speedup:
         return False
-    # otherwise pick newest jobs file
     return candidate.get("jobs_mtime", 0) > existing.get("jobs_mtime", 0)
 
 
@@ -149,14 +148,12 @@ def main(base_dir: str) -> None:
     if not base.exists():
         raise SystemExit(f"Base directory not found: {base}")
 
-    # Index run_csv files by id so we can match quickly
     run_map: Dict[str, Path] = {}
     for path in base.rglob("results_run_*.csv"):
         m = RUN_RE.match(path.name)
         if m:
             run_map[m.group(1)] = path
 
-    # Gather jobs summaries
     by_id: Dict[str, Dict[str, Any]] = {}
 
     for jobs_path in base.rglob("results_jobs_*.csv"):
@@ -193,10 +190,8 @@ def main(base_dir: str) -> None:
             if pick_better(by_id[run_id], candidate):
                 by_id[run_id] = candidate
 
-    # Output array of objects (as requested)
     out: List[Dict[str, Any]] = []
     for _, obj in sorted(by_id.items(), key=lambda kv: kv[0]):
-        # remove internal helper field
         obj.pop("jobs_mtime", None)
         out.append({
             "id": obj["id"],
