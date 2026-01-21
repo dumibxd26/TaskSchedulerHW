@@ -1,0 +1,17 @@
+run_id,dataset_file,speedup,jobs,mean_response_ms,p50_response_ms,p95_response_ms,p99_response_ms,mean_wait_ms,mean_execution_ms,total_slots_at_end,tag,replicas,cores
+e4e3aa2db4,dataset_fifo_burst_1k.csv,20000.0,1000,2230.313,2154.5,4239.549999999999,4688.16,1853.413,376.9,4,replicas_2_cores_2,2,2
+2c573d60c5,dataset_fifo_burst_1k.csv,20000.0,1000,1205.093,1161.0,2282.0,2672.02,828.193,376.9,8,replicas_2_cores_4,2,4
+bba44f8e5b,dataset_fifo_burst_1k.csv,20000.0,1000,628.793,574.0,1158.05,1355.1899999999998,251.893,376.9,16,replicas_2_cores_8,2,8
+e560c0264b,dataset_fifo_burst_1k.csv,20000.0,1000,385.26,382.0,589.05,676.0,8.36,376.9,32,replicas_2_cores_16,2,16
+d01c8de0ba,dataset_fifo_burst_1k.csv,20000.0,1000,1288.58,1268.5,2409.05,2664.2,911.68,376.9,8,replicas_4_cores_2,4,2
+8fd26eb05b,dataset_fifo_burst_1k.csv,20000.0,1000,702.819,657.5,1270.2499999999998,1448.2499999999998,325.919,376.9,16,replicas_4_cores_4,4,4
+c07f11add3,dataset_fifo_burst_1k.csv,20000.0,1000,478.448,479.0,778.05,877.06,101.548,376.9,32,replicas_4_cores_8,4,8
+ae5281f875,dataset_fifo_burst_1k.csv,20000.0,1000,380.114,376.0,585.0,600.0,3.214,376.9,64,replicas_4_cores_16,4,16
+8349a96a62,dataset_fifo_burst_1k.csv,20000.0,1000,762.013,751.0,1382.2499999999998,1581.1499999999999,385.113,376.9,16,replicas_8_cores_2,8,2
+f2b3b1be39,dataset_fifo_burst_1k.csv,20000.0,1000,581.963,523.5,1265.049999999999,1897.06,205.063,376.9,32,replicas_8_cores_4,8,4
+a6a3508f80,dataset_fifo_burst_1k.csv,20000.0,1000,404.658,397.5,599.0,955.3399999999997,27.758,376.9,64,replicas_8_cores_8,8,8
+c2c9aadaaf,dataset_fifo_burst_1k.csv,20000.0,1000,391.453,382.0,590.05,858.1699999999998,14.553,376.9,128,replicas_8_cores_16,8,16
+a3809612e4,dataset_fifo_burst_1k.csv,20000.0,1000,565.616,499.0,1166.0,2356.21,188.716,376.9,32,replicas_16_cores_2,16,2
+fd54f73ae9,dataset_fifo_burst_1k.csv,20000.0,1000,403.747,398.0,607.2999999999988,823.1199999999999,26.847,376.9,64,replicas_16_cores_4,16,4
+f8136463ec,dataset_fifo_burst_1k.csv,20000.0,1000,379.762,376.0,585.0,600.0,2.862,376.9,128,replicas_16_cores_8,16,8
+4ca4c60855,dataset_fifo_burst_1k.csv,20000.0,1000,376.9,374.0,583.0,597.0,0.0,376.9,256,replicas_16_cores_16,16,16
