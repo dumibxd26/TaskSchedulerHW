@@ -1,7 +1,9 @@
 venv/
 results/
 !priority/results/
+!fifo/results/
 priority/results/.tmp/
+fifo/results/.tmp/
 __pycache__/
 data/
 round-robin/data/
