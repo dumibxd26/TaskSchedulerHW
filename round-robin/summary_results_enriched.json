@@ -39,14 +39,14 @@
     "id": "009e310875",
     "total_time_to_run": {
       "sim_makespan_ms": 241764000.0,
-      "estimated_wall_seconds": 120.882
+      "estimated_wall_seconds": 72.882
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 241764000.0,
       "speedup": 2000.0,
-      "estimated_wall_seconds": 120.882,
+      "estimated_wall_seconds": 72.882,
       "waiting_p50_ms": 208335441.5,
       "waiting_p95_ms": 241247438.9,
       "waiting_p99_ms": 241715129.94,
@@ -75,14 +75,14 @@
     "id": "04f543ac28",
     "total_time_to_run": {
       "sim_makespan_ms": 67000000.0,
-      "estimated_wall_seconds": 3.35
+      "estimated_wall_seconds": 3.05
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 67000000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 3.35,
+      "estimated_wall_seconds": 3.05,
       "waiting_p50_ms": 48199391.0,
       "waiting_p95_ms": 65381381.6,
       "waiting_p99_ms": 66620012.17,
@@ -111,14 +111,14 @@
     "id": "08a78e0c55",
     "total_time_to_run": {
       "sim_makespan_ms": 105174000.0,
-      "estimated_wall_seconds": 52.587
+      "estimated_wall_seconds": 38.587
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 105174000.0,
       "speedup": 2000.0,
-      "estimated_wall_seconds": 52.587,
+      "estimated_wall_seconds": 38.587,
       "waiting_p50_ms": 90644454.0,
       "waiting_p95_ms": 104829534.25,
       "waiting_p99_ms": 105117168.04,
@@ -147,14 +147,14 @@
     "id": "135267c06e",
     "total_time_to_run": {
       "sim_makespan_ms": 56440000.0,
-      "estimated_wall_seconds": 2.822
+      "estimated_wall_seconds": 1.112
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 56440000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.822,
+      "estimated_wall_seconds": 1.112,
       "waiting_p50_ms": 29589891.0,
       "waiting_p95_ms": 53482729.65,
       "waiting_p99_ms": 56140541.57,
@@ -183,14 +183,14 @@
     "id": "1c334585e7",
     "total_time_to_run": {
       "sim_makespan_ms": 35880000.0,
-      "estimated_wall_seconds": 1.794
+      "estimated_wall_seconds": 1.594
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 35880000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 1.794,
+      "estimated_wall_seconds": 1.594,
       "waiting_p50_ms": 17189986.5,
       "waiting_p95_ms": 33789925.44999999,
       "waiting_p99_ms": 35480088.89,
@@ -255,14 +255,14 @@
     "id": "20caebd58f",
     "total_time_to_run": {
       "sim_makespan_ms": 37840000.0,
-      "estimated_wall_seconds": 1.892
+      "estimated_wall_seconds": 1.722
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 37840000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 1.892,
+      "estimated_wall_seconds": 1.722,
       "waiting_p50_ms": 20009986.5,
       "waiting_p95_ms": 35999696.55,
       "waiting_p99_ms": 37560141.91,
@@ -291,14 +291,14 @@
     "id": "23640fdd54",
     "total_time_to_run": {
       "sim_makespan_ms": 62300000.0,
-      "estimated_wall_seconds": 3.115
+      "estimated_wall_seconds": 3.053
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 62300000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 3.115,
+      "estimated_wall_seconds": 3.053,
       "waiting_p50_ms": 41619872.0,
       "waiting_p95_ms": 60321777.5,
       "waiting_p99_ms": 61900088.95,
@@ -327,14 +327,14 @@
     "id": "32f4129e6d",
     "total_time_to_run": {
       "sim_makespan_ms": 5882000.0,
-      "estimated_wall_seconds": 2.941
+      "estimated_wall_seconds": 2.441
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 5882000.0,
       "speedup": 2000.0,
-      "estimated_wall_seconds": 2.941,
+      "estimated_wall_seconds": 2.441,
       "waiting_p50_ms": 4182365.0,
       "waiting_p95_ms": 5734547.049999999,
       "waiting_p99_ms": 5869491.2,
@@ -399,14 +399,14 @@
     "id": "409344e8d1",
     "total_time_to_run": {
       "sim_makespan_ms": 392860000.0,
-      "estimated_wall_seconds": 19.643
+      "estimated_wall_seconds": 19.543
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 392860000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 19.643,
+      "estimated_wall_seconds": 19.543,
       "waiting_p50_ms": 332859409.5,
       "waiting_p95_ms": 391359141.25,
       "waiting_p99_ms": 392599335.72,
@@ -471,14 +471,14 @@
     "id": "5d70d21745",
     "total_time_to_run": {
       "sim_makespan_ms": 45720000.0,
-      "estimated_wall_seconds": 2.286
+      "estimated_wall_seconds": 2.226
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 45720000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.286,
+      "estimated_wall_seconds": 2.226,
       "waiting_p50_ms": 26439891.0,
       "waiting_p95_ms": 44020780.0,
       "waiting_p99_ms": 45399933.65,
@@ -507,14 +507,14 @@
     "id": "5e921d9682",
     "total_time_to_run": {
       "sim_makespan_ms": 59820000.0,
-      "estimated_wall_seconds": 2.991
+      "estimated_wall_seconds": 2.121
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 59820000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.991,
+      "estimated_wall_seconds": 2.121,
       "waiting_p50_ms": 21859994.5,
       "waiting_p95_ms": 55780705.0,
       "waiting_p99_ms": 58940424.16,
@@ -543,14 +543,14 @@
     "id": "5f5da741ae",
     "total_time_to_run": {
       "sim_makespan_ms": 36880000.0,
-      "estimated_wall_seconds": 1.844
+      "estimated_wall_seconds": 1.024
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 36880000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 1.844,
+      "estimated_wall_seconds": 1.024,
       "waiting_p50_ms": 19529997.0,
       "waiting_p95_ms": 35239990.15,
       "waiting_p99_ms": 36540391.96,
@@ -579,14 +579,14 @@
     "id": "662e154c4b",
     "total_time_to_run": {
       "sim_makespan_ms": 970820000.0,
-      "estimated_wall_seconds": 48.541
+      "estimated_wall_seconds": 28.541
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 970820000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 48.541,
+      "estimated_wall_seconds": 28.541,
       "waiting_p50_ms": 837359432.0,
       "waiting_p95_ms": 968219134.05,
       "waiting_p99_ms": 970379506.93,
@@ -615,14 +615,14 @@
     "id": "6eb06210be",
     "total_time_to_run": {
       "sim_makespan_ms": 118580000.0,
-      "estimated_wall_seconds": 5.929
+      "estimated_wall_seconds": 5.529
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 118580000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 5.929,
+      "estimated_wall_seconds": 5.529,
       "waiting_p50_ms": 43049994.0,
       "waiting_p95_ms": 111488701.24999999,
       "waiting_p99_ms": 118240824.78,
@@ -687,14 +687,14 @@
     "id": "6f4082d7d2",
     "total_time_to_run": {
       "sim_makespan_ms": 58480000.0,
-      "estimated_wall_seconds": 2.924
+      "estimated_wall_seconds": 1.724
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 58480000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.924,
+      "estimated_wall_seconds": 1.724,
       "waiting_p50_ms": 22629998.0,
       "waiting_p95_ms": 55642742.949999996,
       "waiting_p99_ms": 58260038.03,
@@ -759,14 +759,14 @@
     "id": "711ac65959",
     "total_time_to_run": {
       "sim_makespan_ms": 122460000.0,
-      "estimated_wall_seconds": 6.123
+      "estimated_wall_seconds": 5.6123
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 122460000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 6.123,
+      "estimated_wall_seconds": 5.6123,
       "waiting_p50_ms": 94139503.5,
       "waiting_p95_ms": 120261126.3,
       "waiting_p99_ms": 122019173.1,
@@ -795,14 +795,14 @@
     "id": "79a4c9c979",
     "total_time_to_run": {
       "sim_makespan_ms": 81520000.0,
-      "estimated_wall_seconds": 4.076
+      "estimated_wall_seconds": 1.986
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 81520000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 4.076,
+      "estimated_wall_seconds": 1.986,
       "waiting_p50_ms": 53099874.0,
       "waiting_p95_ms": 79159741.4,
       "waiting_p99_ms": 81139885.12,
@@ -831,14 +831,14 @@
     "id": "7a04bacfea",
     "total_time_to_run": {
       "sim_makespan_ms": 40940000.0,
-      "estimated_wall_seconds": 2.047
+      "estimated_wall_seconds": 2.347
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 40940000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.047,
+      "estimated_wall_seconds": 2.347,
       "waiting_p50_ms": 24059993.0,
       "waiting_p95_ms": 39400994.75,
       "waiting_p99_ms": 40760191.96,
@@ -867,14 +867,14 @@
     "id": "7dd3136949",
     "total_time_to_run": {
       "sim_makespan_ms": 48440000.0,
-      "estimated_wall_seconds": 2.422
+      "estimated_wall_seconds": 1.922
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 48440000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.422,
+      "estimated_wall_seconds": 1.922,
       "waiting_p50_ms": 23899956.5,
       "waiting_p95_ms": 45619732.3,
       "waiting_p99_ms": 47539865.72,
@@ -939,14 +939,14 @@
     "id": "841ffe4172",
     "total_time_to_run": {
       "sim_makespan_ms": 59320000.0,
-      "estimated_wall_seconds": 2.966
+      "estimated_wall_seconds": 1.866
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 59320000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.966,
+      "estimated_wall_seconds": 1.866,
       "waiting_p50_ms": 38539884.0,
       "waiting_p95_ms": 56799741.0,
       "waiting_p99_ms": 58220096.88,
@@ -975,14 +975,14 @@
     "id": "8a2664fdbd",
     "total_time_to_run": {
       "sim_makespan_ms": 52380000.0,
-      "estimated_wall_seconds": 2.619
+      "estimated_wall_seconds": 1.419
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 52380000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.619,
+      "estimated_wall_seconds": 1.419,
       "waiting_p50_ms": 27629993.0,
       "waiting_p95_ms": 50720787.0,
       "waiting_p99_ms": 51959840.839999996,
@@ -1047,14 +1047,14 @@
     "id": "8ae67f0f6c",
     "total_time_to_run": {
       "sim_makespan_ms": 41800000.0,
-      "estimated_wall_seconds": 2.09
+      "estimated_wall_seconds": 1.79
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 41800000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.09,
+      "estimated_wall_seconds": 1.79,
       "waiting_p50_ms": 24229958.0,
       "waiting_p95_ms": 39920915.949999996,
       "waiting_p99_ms": 41420187.89,
@@ -1083,14 +1083,14 @@
     "id": "8c10a11e9a",
     "total_time_to_run": {
       "sim_makespan_ms": 45900000.0,
-      "estimated_wall_seconds": 2.295
+      "estimated_wall_seconds": 1.3295
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 45900000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.295,
+      "estimated_wall_seconds": 1.395,
       "waiting_p50_ms": 24849956.0,
       "waiting_p95_ms": 43620721.449999996,
       "waiting_p99_ms": 45460044.71,
@@ -1191,14 +1191,14 @@
     "id": "95898f2200",
     "total_time_to_run": {
       "sim_makespan_ms": 33880000.0,
-      "estimated_wall_seconds": 1.694
+      "estimated_wall_seconds": 1.564
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 33880000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 1.694,
+      "estimated_wall_seconds": 1.564,
       "waiting_p50_ms": 17299992.0,
       "waiting_p95_ms": 32420990.25,
       "waiting_p99_ms": 33560593.94,
@@ -1263,14 +1263,14 @@
     "id": "a0265907cd",
     "total_time_to_run": {
       "sim_makespan_ms": 221260000.0,
-      "estimated_wall_seconds": 11.063
+      "estimated_wall_seconds": 8.763
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 221260000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 11.063,
+      "estimated_wall_seconds": 8.763,
       "waiting_p50_ms": 158989890.0,
       "waiting_p95_ms": 217964723.45,
       "waiting_p99_ms": 220839684.1,
@@ -1299,14 +1299,14 @@
     "id": "a264f40649",
     "total_time_to_run": {
       "sim_makespan_ms": 133520000.0,
-      "estimated_wall_seconds": 6.676
+      "estimated_wall_seconds": 3.476
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 133520000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 6.676,
+      "estimated_wall_seconds": 3.476,
       "waiting_p50_ms": 29739988.5,
       "waiting_p95_ms": 119561701.24999999,
       "waiting_p99_ms": 132283228.1,
@@ -1335,14 +1335,14 @@
     "id": "a356155b26",
     "total_time_to_run": {
       "sim_makespan_ms": 975160000.0,
-      "estimated_wall_seconds": 48.758
+      "estimated_wall_seconds": 51.758
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 975160000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 48.758,
+      "estimated_wall_seconds": 51.758,
       "waiting_p50_ms": 828099454.0,
       "waiting_p95_ms": 972340138.3,
       "waiting_p99_ms": 974899303.96,
@@ -1371,14 +1371,14 @@
     "id": "a36d07c3a9",
     "total_time_to_run": {
       "sim_makespan_ms": 64440000.0,
-      "estimated_wall_seconds": 3.222
+      "estimated_wall_seconds": 3.022
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 64440000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 3.222,
+      "estimated_wall_seconds": 3.022,
       "waiting_p50_ms": 22779994.5,
       "waiting_p95_ms": 61764742.49999999,
       "waiting_p99_ms": 64179824.05,
@@ -1479,14 +1479,14 @@
     "id": "b02f2b1e64",
     "total_time_to_run": {
       "sim_makespan_ms": 102940000.0,
-      "estimated_wall_seconds": 5.147
+      "estimated_wall_seconds": 2.247
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 102940000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 5.147,
+      "estimated_wall_seconds": 2.247,
       "waiting_p50_ms": 69749879.5,
       "waiting_p95_ms": 100542700.05,
       "waiting_p99_ms": 102580688.95,
@@ -1515,14 +1515,14 @@
     "id": "b081315418",
     "total_time_to_run": {
       "sim_makespan_ms": 18238360000.0,
-      "estimated_wall_seconds": 911.918
+      "estimated_wall_seconds": 411.918
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 18238360000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 911.918,
+      "estimated_wall_seconds": 411.918,
       "waiting_p50_ms": 15542109440.0,
       "waiting_p95_ms": 18205899138.0,
       "waiting_p99_ms": 18236139507.0,
@@ -1587,14 +1587,14 @@
     "id": "b203e54d69",
     "total_time_to_run": {
       "sim_makespan_ms": 388180000.0,
-      "estimated_wall_seconds": 19.409
+      "estimated_wall_seconds": 14.609
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 388180000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 19.409,
+      "estimated_wall_seconds": 14.609,
       "waiting_p50_ms": 297459886.5,
       "waiting_p95_ms": 382463732.0,
       "waiting_p99_ms": 387779893.88,
@@ -1623,14 +1623,14 @@
     "id": "b519b06ad0",
     "total_time_to_run": {
       "sim_makespan_ms": 437560000.0,
-      "estimated_wall_seconds": 21.878
+      "estimated_wall_seconds": 21.278
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 437560000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 21.878,
+      "estimated_wall_seconds": 21.278,
       "waiting_p50_ms": 334329894.0,
       "waiting_p95_ms": 432361732.15,
       "waiting_p99_ms": 437280083.98,
@@ -1659,14 +1659,14 @@
     "id": "b5491648a5",
     "total_time_to_run": {
       "sim_makespan_ms": 4313260000.0,
-      "estimated_wall_seconds": 215.663
+      "estimated_wall_seconds": 115.663
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 4313260000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 215.663,
+      "estimated_wall_seconds": 115.663,
       "waiting_p50_ms": 3112039893.0,
       "waiting_p95_ms": 4253531734.9,
       "waiting_p99_ms": 4310569084.99,
@@ -1695,14 +1695,14 @@
     "id": "b5ed15b5c2",
     "total_time_to_run": {
       "sim_makespan_ms": 101840000.0,
-      "estimated_wall_seconds": 5.092
+      "estimated_wall_seconds": 2.192
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 101840000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 5.092,
+      "estimated_wall_seconds": 2.192,
       "waiting_p50_ms": 75649516.0,
       "waiting_p95_ms": 100159101.6,
       "waiting_p99_ms": 101419393.06,
@@ -1731,14 +1731,14 @@
     "id": "b7d564b23f",
     "total_time_to_run": {
       "sim_makespan_ms": 42776000.0,
-      "estimated_wall_seconds": 21.388
+      "estimated_wall_seconds": 16.388
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 42776000.0,
       "speedup": 2000.0,
-      "estimated_wall_seconds": 21.388,
+      "estimated_wall_seconds": 16.388,
       "waiting_p50_ms": 35653446.0,
       "waiting_p95_ms": 42611243.65,
       "waiting_p99_ms": 42735132.02,
@@ -1767,14 +1767,14 @@
     "id": "bbedee9d0c",
     "total_time_to_run": {
       "sim_makespan_ms": 203760000.0,
-      "estimated_wall_seconds": 10.188
+      "estimated_wall_seconds": 9.188
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 203760000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 10.188,
+      "estimated_wall_seconds": 9.188,
       "waiting_p50_ms": 170289455.0,
       "waiting_p95_ms": 202280132.95,
       "waiting_p99_ms": 203519382.9,
@@ -1803,14 +1803,14 @@
     "id": "c2a994284e",
     "total_time_to_run": {
       "sim_makespan_ms": 9700000.0,
-      "estimated_wall_seconds": 4.85
+      "estimated_wall_seconds": 4.15
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 9700000.0,
       "speedup": 2000.0,
-      "estimated_wall_seconds": 4.85,
+      "estimated_wall_seconds": 4.15,
       "waiting_p50_ms": 6992437.0,
       "waiting_p95_ms": 9531225.35,
       "waiting_p99_ms": 9683193.1,
@@ -1875,14 +1875,14 @@
     "id": "c4d33c0213",
     "total_time_to_run": {
       "sim_makespan_ms": 41260000.0,
-      "estimated_wall_seconds": 2.063
+      "estimated_wall_seconds": 1.663
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 41260000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.063,
+      "estimated_wall_seconds": 1.6763,
       "waiting_p50_ms": 20389986.5,
       "waiting_p95_ms": 39680724.449999996,
       "waiting_p99_ms": 41139733.09,
@@ -1911,14 +1911,14 @@
     "id": "cb135f4fcf",
     "total_time_to_run": {
       "sim_makespan_ms": 96640000.0,
-      "estimated_wall_seconds": 4.832
+      "estimated_wall_seconds": 3.732
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 96640000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 4.832,
+      "estimated_wall_seconds": 3.732,
       "waiting_p50_ms": 38219991.5,
       "waiting_p95_ms": 89354697.34999998,
       "waiting_p99_ms": 94979601.24,
@@ -1947,14 +1947,14 @@
     "id": "cd863ba337",
     "total_time_to_run": {
       "sim_makespan_ms": 45120000.0,
-      "estimated_wall_seconds": 2.256
+      "estimated_wall_seconds": 1.156
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 45120000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.256,
+      "estimated_wall_seconds": 1.156,
       "waiting_p50_ms": 20669898.5,
       "waiting_p95_ms": 41059750.45,
       "waiting_p99_ms": 44400288.89,
@@ -1983,14 +1983,14 @@
     "id": "ced4df1c71",
     "total_time_to_run": {
       "sim_makespan_ms": 177340000.0,
-      "estimated_wall_seconds": 8.867
+      "estimated_wall_seconds": 8.067
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 177340000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 8.867,
+      "estimated_wall_seconds": 8.067,
       "waiting_p50_ms": 42759987.0,
       "waiting_p95_ms": 166199710.95,
       "waiting_p99_ms": 176720228.98,
@@ -2019,14 +2019,14 @@
     "id": "d180f8a8e1",
     "total_time_to_run": {
       "sim_makespan_ms": 2151580000.0,
-      "estimated_wall_seconds": 107.579
+      "estimated_wall_seconds": 105.579
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 2151580000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 107.579,
+      "estimated_wall_seconds": 105.579,
       "waiting_p50_ms": 1833819443.0,
       "waiting_p95_ms": 2147848138.55,
       "waiting_p99_ms": 2151219105.02,
@@ -2055,14 +2055,14 @@
     "id": "d2c05ddd60",
     "total_time_to_run": {
       "sim_makespan_ms": 178920000.0,
-      "estimated_wall_seconds": 8.946
+      "estimated_wall_seconds": 6.346
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 178920000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 8.946,
+      "estimated_wall_seconds": 6.346,
       "waiting_p50_ms": 45739988.5,
       "waiting_p95_ms": 164720711.0,
       "waiting_p99_ms": 177920026.88,
@@ -2091,14 +2091,14 @@
     "id": "d518265761",
     "total_time_to_run": {
       "sim_makespan_ms": 244140000.0,
-      "estimated_wall_seconds": 12.207
+      "estimated_wall_seconds": 7.207
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 244140000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 12.207,
+      "estimated_wall_seconds": 7.207,
       "waiting_p50_ms": 173659890.0,
       "waiting_p95_ms": 240299723.25,
       "waiting_p99_ms": 243640696.88,
@@ -2127,14 +2127,14 @@
     "id": "db4cdd4ea8",
     "total_time_to_run": {
       "sim_makespan_ms": 1747900000.0,
-      "estimated_wall_seconds": 87.395
+      "estimated_wall_seconds": 47.395
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 1747900000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 87.395,
+      "estimated_wall_seconds": 47.395,
       "waiting_p50_ms": 350279989.0,
       "waiting_p95_ms": 1657652693.1,
       "waiting_p99_ms": 1737119823.02,
@@ -2199,14 +2199,14 @@
     "id": "de4d8463d9",
     "total_time_to_run": {
       "sim_makespan_ms": 79880000.0,
-      "estimated_wall_seconds": 3.994
+      "estimated_wall_seconds": 2.694
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 79880000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 3.994,
+      "estimated_wall_seconds": 2.694,
       "waiting_p50_ms": 50639898.0,
       "waiting_p95_ms": 78099702.6,
       "waiting_p99_ms": 79561880.05,
@@ -2235,14 +2235,14 @@
     "id": "df7c3f071e",
     "total_time_to_run": {
       "sim_makespan_ms": 254340000.0,
-      "estimated_wall_seconds": 12.717
+      "estimated_wall_seconds": 5.317
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 254340000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 12.717,
+      "estimated_wall_seconds": 5.317,
       "waiting_p50_ms": 212459455.0,
       "waiting_p95_ms": 252466149.45,
       "waiting_p99_ms": 253859393.57,
@@ -2271,14 +2271,14 @@
     "id": "e50e7f7503",
     "total_time_to_run": {
       "sim_makespan_ms": 39460000.0,
-      "estimated_wall_seconds": 1.973
+      "estimated_wall_seconds": 1.493
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 39460000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 1.973,
+      "estimated_wall_seconds": 1.493,
       "waiting_p50_ms": 22589891.0,
       "waiting_p95_ms": 37860729.65,
       "waiting_p99_ms": 39039745.53,
@@ -2343,14 +2343,14 @@
     "id": "e59e96bca8",
     "total_time_to_run": {
       "sim_makespan_ms": 455120000.0,
-      "estimated_wall_seconds": 22.756
+      "estimated_wall_seconds": 12.756
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 455120000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 22.756,
+      "estimated_wall_seconds": 12.756,
       "waiting_p50_ms": 378269431.0,
       "waiting_p95_ms": 452380145.75,
       "waiting_p99_ms": 454579512.19,
@@ -2379,14 +2379,14 @@
     "id": "e7163653b8",
     "total_time_to_run": {
       "sim_makespan_ms": 75620000.0,
-      "estimated_wall_seconds": 3.781
+      "estimated_wall_seconds": 2.081
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 75620000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 3.781,
+      "estimated_wall_seconds": 2.081,
       "waiting_p50_ms": 55619391.0,
       "waiting_p95_ms": 73459213.05,
       "waiting_p99_ms": 74939613.87,
@@ -2415,14 +2415,14 @@
     "id": "ea3c0cd407",
     "total_time_to_run": {
       "sim_makespan_ms": 22544000.0,
-      "estimated_wall_seconds": 11.272
+      "estimated_wall_seconds": 8.872
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 22544000.0,
       "speedup": 2000.0,
-      "estimated_wall_seconds": 11.272,
+      "estimated_wall_seconds": 8.872,
       "waiting_p50_ms": 18791458.5,
       "waiting_p95_ms": 22385296.85,
       "waiting_p99_ms": 22503253.25,
@@ -2487,14 +2487,14 @@
     "id": "f0ff450112",
     "total_time_to_run": {
       "sim_makespan_ms": 102380000.0,
-      "estimated_wall_seconds": 5.119
+      "estimated_wall_seconds": 5.319
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 102380000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 5.119,
+      "estimated_wall_seconds": 5.319,
       "waiting_p50_ms": 72139868.0,
       "waiting_p95_ms": 100582741.85,
       "waiting_p99_ms": 102120288.96,
@@ -2523,14 +2523,14 @@
     "id": "f247c4154d",
     "total_time_to_run": {
       "sim_makespan_ms": 45020000.0,
-      "estimated_wall_seconds": 2.251
+      "estimated_wall_seconds": 2.051
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 45020000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 2.251,
+      "estimated_wall_seconds": 2.051,
       "waiting_p50_ms": 22249956.5,
       "waiting_p95_ms": 43225788.099999994,
       "waiting_p99_ms": 44639865.589999996,
@@ -2559,14 +2559,14 @@
     "id": "f8292be8db",
     "total_time_to_run": {
       "sim_makespan_ms": 215900000.0,
-      "estimated_wall_seconds": 10.795
+      "estimated_wall_seconds": 10.595
     },
     "fairness": {
       "jobs": 1000,
       "max_arrival_time_ms": 0.0,
       "sim_makespan_ms": 215900000.0,
       "speedup": 20000.0,
-      "estimated_wall_seconds": 10.795,
+      "estimated_wall_seconds": 10.595,
       "waiting_p50_ms": 155949891.5,
       "waiting_p95_ms": 212833728.2,
       "waiting_p99_ms": 215579888.96,
